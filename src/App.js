@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/header'
-import Userinfo from './components/userinfo/userinfo';
-import WorkExperience from './components/workexperience/workexperience';
+import Resume from './components/resume/resume';
 import './App.css';
 
 class App extends Component {
@@ -9,11 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div className="resume-info">
-          <Userinfo />
-          <WorkExperience />  
-        </div>
-
+        <Resume />
+        
         <br/><br/><br/><br/>
       </div>
     );

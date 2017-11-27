@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Job from '../job/job';
+import Jobs from '../jobs/jobs';
 import './workexperience.css';
 
 class WorkExperience extends Component {
@@ -12,7 +12,7 @@ class WorkExperience extends Component {
         return (
             <div className="work-experience-container">
                 <h3 className="work-experience-header">Work Experience</h3>
-                <Job />
+                <Jobs />
             </div>
         )
     }
