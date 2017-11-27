@@ -2,3 +2,12 @@
     width: 100%;
     margin: 0 auto;
 }
+
+.add-job-btn-container {
+    float: right;
+}
+
+.add-job-btn {
+    width: 20px;
+    cursor: pointer;
+}
