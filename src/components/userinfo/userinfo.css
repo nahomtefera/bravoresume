@@ -1,0 +1,38 @@
+.user-info-container {
+    padding-top: 20px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.user-full-name input, .user-contact-details input{
+    border: none;
+}
+
+.user-name input, .user-last-name input {
+    font-size: 2.4em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.user-last-name input {
+    margin-left: 15px;
+}
+
+.user-home-address  input {
+    background: url(../../images/icons/home-icon.png) no-repeat scroll 7px 0px;
+    background-size: 15px;    
+    padding-left:30px;
+    margin-bottom: 5px;
+}
+
+.user-phone-number input {
+    background: url(../../images/icons/phone-icon.png) no-repeat scroll 7px 0px;
+    background-size: 13px;    
+    padding-left:30px;
+}
+
+.user-email-address input {
+    background: url(../../images/icons/email-icon.png) no-repeat scroll 7px 0px;
+    background-size: 13px;    
+    padding-left:30px;
+    margin-left: 10px;
+}    

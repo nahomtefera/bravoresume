@@ -1,0 +1,11 @@
+.resume-info {
+  width: 21cm;
+  min-height: 29.7cm;
+  height: auto;
+  border: 1px solid #ababab;
+  margin: 0 auto;
+}
+
+input:focus {
+  outline: none;
+}
