@@ -1,0 +1,11 @@
+.job-date {
+    float: right;
+}
+
+.job-location {
+    margin-left: 20px;
+}
+
+.job-description {
+    width: 100%;
+}
