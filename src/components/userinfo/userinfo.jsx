@@ -22,7 +22,8 @@ class Userinfo extends Component {
         this.changeEmailAddress = this.changeEmailAddress.bind(this);
         this.changePhoneNumber = this.changePhoneNumber.bind(this);
     }
-
+    // We will call this functions when the input changes
+    // and it will update the state
     changeName(e) {
         this.setState({
             user_name: e.target.value
