@@ -9,3 +9,13 @@
 .job-description {
     width: 100%;
 }
+
+.rem-job-container {
+    display: inline;
+    margin-left: 10px;
+}
+
+.rem-job-icon {
+    width: 10px;
+    cursor: pointer;
+}

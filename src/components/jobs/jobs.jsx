@@ -10,22 +10,36 @@ class Jobs extends Component {
 
         this.state={
             number_jobs: [{
-                key: 0,
+                key: new Date().getTime(),
             }],
         }
         this.addJob = this.addJob.bind(this);
+        this.remJob = this.remJob.bind(this);
     }
 
     addJob() {
         const prevNumOfJobs = this.state.number_jobs;
-        var numOfJobs = prevNumOfJobs.length;
-
+        // Assign a new getTime stamp to every new element we push
         prevNumOfJobs.push({
-            key: numOfJobs
+            key: new Date().getTime()
         })
 
         this.setState({
             number_jobs: prevNumOfJobs,
+        })
+    }
+
+    remJob(id) {
+        var prevJobs = this.state.number_jobs;
+
+        for (var i = 0; i < prevJobs.length; i++){
+            if(prevJobs[i].key === id) {
+                prevJobs.splice(i, 1);
+            }
+        }
+               
+        this.setState({
+            number_jobs: prevJobs,
         })
     }
 
@@ -36,7 +50,11 @@ class Jobs extends Component {
                 {
                     this.state.number_jobs.map((job) =>{
                         return (
-                            <Job key={job.key} />
+                            <Job 
+                                key={job.key} 
+                                job_id={job.key} 
+                                remJob={this.remJob}
+                            />
                         )
                     })
                 }

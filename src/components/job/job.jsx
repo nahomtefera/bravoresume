@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import AutosizeInput from 'react-input-autosize';
 import Textarea from "react-textarea-autosize";
+import rem_icon from '../../images/icons/rem-icon.png'
+
 
 import './job.css';
 
@@ -14,7 +16,8 @@ class Job extends Component {
             job_date: "",
             job_company: "",
             job_location: "",
-            job_description: ""
+            job_description: "",
+            key: props.job_id,
         }
 
         this.changeJob = this.changeJob.bind(this); 
@@ -22,7 +25,7 @@ class Job extends Component {
         this.changeCompany = this.changeCompany.bind(this); 
         this.changeLocation = this.changeLocation.bind(this); 
         this.changeDescription = this.changeDescription.bind(this); 
-        
+        this.removeJob = this.removeJob.bind(this);
     }
 
     changeJob(e) {
@@ -50,7 +53,11 @@ class Job extends Component {
             job_description: e.target.value
         })    
     }
-    
+    removeJob() {
+        console.log("yo what's up maan, i'm inside job")
+        console.log(this);
+        this.props.remJob(this.props.job_id);
+    }
 
     render() {
         return (
@@ -60,6 +67,13 @@ class Job extends Component {
                         value={this.state.job_title} placeholder="Job Title"
                         onChange={this.changeJob}
                 />
+            {/* Remove job icon */}
+            <div className="rem-job-container">
+                <img className="rem-job-icon" src={rem_icon} 
+                onClick={this.removeJob}
+                alt="remove this job"
+                />
+            </div>
             {/* Dates worked */}
                 <AutosizeInput name="job-date" className="job-date" 
                         value={this.state.job_date} placeholder="01/17 - Present"
