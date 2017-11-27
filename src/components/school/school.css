@@ -1,0 +1,17 @@
+.school-date {
+    float: right;
+}
+
+.school-location {
+    margin-left: 20px;
+}
+
+.rem-school-container {
+    display: inline;
+    margin-left: 10px;
+}
+
+.rem-school-icon {
+    width: 10px;
+    cursor: pointer;
+}

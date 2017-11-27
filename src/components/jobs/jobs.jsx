@@ -37,7 +37,7 @@ class Jobs extends Component {
                 prevJobs.splice(i, 1);
             }
         }
-               
+
         this.setState({
             number_jobs: prevJobs,
         })
@@ -58,8 +58,7 @@ class Jobs extends Component {
                         )
                     })
                 }
-                
-
+                {/* Button to remove job */}
                 <div className="add-job-btn-container">
                     <img className="add-job-btn" 
                         src={plus_icon} alt="add job"

@@ -1,0 +1,13 @@
+.schools-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.add-school-btn-container {
+    float: right;
+}
+
+.add-school-btn {
+    width: 20px;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Userinfo from '../userinfo/userinfo';
 import WorkExperience from '../workexperience/workexperience';
+import Education from '../education/education';
 import './resume.css'
 
 class Resume extends Component {
@@ -9,7 +10,8 @@ class Resume extends Component {
         return(
             <div className="resume-info">
                 <Userinfo />
-                <WorkExperience />  
+                <WorkExperience /> 
+                <Education /> 
             </div>
         )
     }
