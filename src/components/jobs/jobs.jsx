@@ -15,6 +15,7 @@ class Jobs extends Component {
         }
         this.addJob = this.addJob.bind(this);
         this.remJob = this.remJob.bind(this);
+        this.getJobInfo = this.getJobInfo.bind(this);
     }
 
     addJob() {
@@ -43,6 +44,10 @@ class Jobs extends Component {
         })
     }
 
+    getJobInfo() {
+        console.log(this);
+    }
+
     render() {
         return(
             <div className="jobs-container">
@@ -54,6 +59,7 @@ class Jobs extends Component {
                                 key={job.key} 
                                 job_id={job.key} 
                                 remJob={this.remJob}
+                                getJobInfo={this.getJobInfo}
                             />
                         )
                     })
@@ -65,6 +71,8 @@ class Jobs extends Component {
                         onClick={this.addJob}
                     />
                 </div>
+
+                <button onClick={this.getJobInfo}>get job info</button>
             </div>
         )
     }

@@ -31,7 +31,8 @@ class Job extends Component {
     changeJob(e) {
         this.setState({
             job_title: e.target.value
-        })
+        });
+        this.props.getJobInfo()
     }
     changeDate(e) {
         this.setState({

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import AutosizeInput from 'react-input-autosize';
-import rem_icon from '../../images/icons/rem-icon.png'
-
-
+import rem_icon from '../../images/icons/rem-icon.png';
 import './school.css';
 
 class School extends Component {
@@ -69,18 +67,18 @@ class School extends Component {
             </div>
             {/* Dates worked */}
                 <AutosizeInput name="school-date" className="school-date" 
-                        value={this.state.year} placeholder="01/17 - Present"
+                        value={this.state.year} placeholder="2017"
                         onChange={this.changeYear}
                 />
                 <br/>
             {/* Company */}
                 <AutosizeInput name="school-name" className="school-name" 
-                        value={this.state.school_name} placeholder="Microsoft"
+                        value={this.state.school_name} placeholder="Udacity"
                         onChange={this.changeSchool}
                 />
             {/* Location */}
-                <AutosizeInput name="school-location" 
-                        value={this.state.school_location} placeholder="Sunnyvale"
+                <AutosizeInput name="school-location" className="school-location" 
+                        value={this.state.school_location} placeholder="Online"
                         onChange={this.changeLocation}
                 />
                 <br/>
