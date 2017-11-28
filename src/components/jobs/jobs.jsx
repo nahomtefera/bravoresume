@@ -61,8 +61,11 @@ class Jobs extends Component {
                 })
             }
         }
-        console.log(this.state.number_jobs)
-        
+        console.log("I'm going to pass this: ");
+        console.log(this.state.number_jobs);
+        console.log(" to WorkExperience");
+
+        this.props.getAllJobs(this.state.number_jobs);
     }
 
     render() {

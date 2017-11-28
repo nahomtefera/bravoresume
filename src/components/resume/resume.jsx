@@ -12,16 +12,12 @@ class Resume extends Component {
 
         this.state = {
             user_info: " ",
-            work_info: [],
+            work_experience: [],
         }
 
         this.getUserInfo = this.getUserInfo.bind(this);
         this.getWorkExp = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this)
-    }
-
-    getWorkExp(exp) {
-
     }
 
     _createpdf = () => {
@@ -38,10 +34,8 @@ class Resume extends Component {
         })
     }   
 
-    getWorkInfo(info) {
+    getWorkExp(info) {
         
-        var prevWorkInfo;
-
         this.setState({
             work_info: info
         })
