@@ -32,27 +32,31 @@ class Job extends Component {
         this.setState({
             job_title: e.target.value
         });
-        this.props.getJobInfo()
+        this.props.getJobInfo(this.state)
     }
     changeDate(e) {
         this.setState({
             job_date: e.target.value
-        })
+        });
+        this.props.getJobInfo(this.state)
     }
     changeCompany(e) {
         this.setState({
             job_company: e.target.value
-        })
+        });
+        this.props.getJobInfo(this.state)
     }
     changeLocation(e) {
         this.setState({
             job_location: e.target.value
-        })
+        });
+        this.props.getJobInfo(this.state)
     }
     changeDescription(e) {
         this.setState({
             job_description: e.target.value
-        })    
+        });
+            this.props.getJobInfo(this.state)
     }
     removeJob() {
         console.log("yo what's up maan, i'm inside job")

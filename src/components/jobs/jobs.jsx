@@ -11,6 +11,11 @@ class Jobs extends Component {
         this.state={
             number_jobs: [{
                 key: new Date().getTime(),
+                job_title: "",
+                job_date: "",
+                job_company: "",
+                job_location: "",
+                job_description: "",
             }],
         }
         this.addJob = this.addJob.bind(this);
@@ -44,8 +49,20 @@ class Jobs extends Component {
         })
     }
 
-    getJobInfo() {
-        console.log(this);
+    getJobInfo(job) {
+        var currentState = this.state.number_jobs;
+        var fullJob = job;
+        
+        for(var i=0; i<currentState.length; i++) {
+            if (currentState[i].key === job.key) {
+                currentState[i] = fullJob;
+                this.setState({
+                    number_jobs: currentState,
+                })
+            }
+        }
+        console.log(this.state.number_jobs)
+        
     }
 
     render() {

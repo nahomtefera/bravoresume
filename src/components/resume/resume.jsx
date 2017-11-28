@@ -40,9 +40,10 @@ class Resume extends Component {
 
     getWorkInfo(info) {
         
+        var prevWorkInfo;
 
         this.setState({
-            user_info: info
+            work_info: info
         })
     }
 
