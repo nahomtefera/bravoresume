@@ -68,7 +68,7 @@ class Userinfo extends Component {
 
     render () {
         return (
-            <div className="user-info-container">
+            <div className={this.props.className + " user-info-container"}>
                 <div className="user-full-name">
                     <br/>
                     <AutosizeInput name="user-name" className="user-name" 

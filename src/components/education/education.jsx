@@ -24,7 +24,7 @@ class Education extends Component {
 
     render() {
         return (
-            <div className="education-container">
+            <div className={this.props.className + " education-container"}>
                 <h3 className="education-header">Education</h3>
                 <div className="section-bar"></div>
                 <Schools getAllSchools={this.getAllSchools}/>

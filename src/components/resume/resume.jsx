@@ -13,13 +13,17 @@ class Resume extends Component {
         this.state = {
             user_info: {},
             work_experience: [],
-            education: []
+            education: [],
+            showUser: true,
+            showWork: false,
+            showEducation: false
         }
-
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
         this.get_work_exp = this.get_work_exp.bind(this);
         this.get_education = this.get_education.bind(this);
+        this.next = this.next.bind(this);
+        this.prev = this.prev.bind(this);
     }
 
     _createpdf = () => {
@@ -49,12 +53,69 @@ class Resume extends Component {
         })
     }
 
+    next() {
+        if(this.state.showUser === true) {
+            this.setState({
+                showUser: false,
+                showWork: true,
+                showEducation: false
+            })
+        }else if(this.state.showWork === true){
+            this.setState({
+                showUser: false,
+                showWork: false,
+                showEducation: true
+            })
+        }
+    }
+
+    prev() {
+        if(this.state.showWork === true) {
+            this.setState({
+                showUser: true,
+                showWork: false,
+                showEducation: false
+            })
+        }else if(this.state.showEducation === true){
+            this.setState({
+                showUser: false,
+                showWork: true,
+                showEducation: false
+            })
+        }
+    }
+
     render() {
         return(
             <div className="resume-info">
-                <Userinfo getUserInfo={this.getUserInfo} />
-                <WorkExperience get_work_exp={this.get_work_exp} /> 
-                <Education get_education={this.get_education} /> 
+
+                <Userinfo 
+                    className={this.state.showUser ?
+                        "show":
+                        "hide"} 
+                    getUserInfo={this.getUserInfo} 
+                />
+
+                <WorkExperience 
+                    className={this.state.showWork ?
+                        "show":
+                        "hide"}
+                    get_work_exp={this.get_work_exp} 
+                /> 
+
+                <Education 
+                    className={this.state.showEducation ?
+                        "show":
+                        "hide"}
+                    get_education={this.get_education} 
+                />
+
+                <br/><br/><br/>
+            
+                <div className="prev-next-btn">
+                    <button onClick={this.prev} className="prev-btn">Previous</button>
+                    <button onClick={this.next} className="next-btn">Next</button>
+                </div>
                 <br/><br/><br/>
                 <div className="download-pdf-btn-container">
                     <button className="download-pdf-btn" onClick={this._createpdf}>Download pdf</button>

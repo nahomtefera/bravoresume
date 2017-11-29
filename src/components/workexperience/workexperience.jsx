@@ -24,7 +24,7 @@ class WorkExperience extends Component {
 
     render() {
         return (
-            <div className="work-experience-container">
+            <div className={this.props.className + " work-experience-container"}>
                 <h3 className="work-experience-header">Work Experience</h3>
                 <div className="section-bar"></div>
                 <Jobs getAllJobs={this.getAllJobs} />

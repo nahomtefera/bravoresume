@@ -1,9 +1,16 @@
 @media (max-width: 880px){
     
-    .user-info-container, .work-experience-container, .education-container {
-        /* display: none; */
+    /* .user-info-container, .work-experience-container, .education-container {
+        display: none;
+    } */
+
+    .show {
+        display: block!important;
     }
 
+    .hide {
+        display: none!important;
+    }
     .resume-info {
         min-height: 0cm;
         width: 90%;
@@ -107,7 +114,6 @@
     /* EDUCATION */
 
     .education-container {
-        display: block;        
     }
 
     .education-header {
