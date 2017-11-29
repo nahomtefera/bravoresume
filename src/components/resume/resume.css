@@ -7,7 +7,27 @@
 }
 
 .prev-next-btn {
+    display: none;
     text-align: center;
+    margin-top: 55px;    
+}
+
+.prev-next-btn button {
+    text-transform: uppercase;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    background: white;
+    font-family: "Raleway";
+    
+}
+
+.prev-btn {
+    color: indianred;
+}
+
+.next-btn {
+    color: lightseagreen;
 }
 
 .download-pdf-btn-container {

@@ -53,6 +53,7 @@ class Resume extends Component {
         })
     }
 
+    // Mobile Functionality to change field
     next() {
         if(this.state.showUser === true) {
             this.setState({
@@ -68,7 +69,7 @@ class Resume extends Component {
             })
         }
     }
-
+    // Mobile Functionality to change field
     prev() {
         if(this.state.showWork === true) {
             this.setState({
