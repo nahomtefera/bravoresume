@@ -16,14 +16,14 @@ class Resume extends Component {
         }
 
         this.getUserInfo = this.getUserInfo.bind(this);
-        this.getWorkExp = this.getUserInfo.bind(this);
-        this._createpdf = this._createpdf.bind(this)
+        this._createpdf = this._createpdf.bind(this);
+        this.get_work_exp = this.get_work_exp.bind(this);
     }
 
     _createpdf = () => {
         // We are going to pass create_pdf the info from
         // different components stored in the state
-        create_pdf(this.state.user_info);
+        create_pdf(this.state);
     }
 
     getUserInfo(info) {
@@ -34,10 +34,10 @@ class Resume extends Component {
         })
     }   
 
-    getWorkExp(info) {
-        
+    get_work_exp(job_exp) {
+
         this.setState({
-            work_info: info
+            work_experience: job_exp
         })
     }
 
@@ -45,7 +45,7 @@ class Resume extends Component {
         return(
             <div className="resume-info">
                 <Userinfo getUserInfo={this.getUserInfo} />
-                <WorkExperience getWorkExp={this.getWorkExp} /> 
+                <WorkExperience get_work_exp={this.get_work_exp} /> 
                 <Education /> 
 
                 <button onClick={this._createpdf}>Download</button>

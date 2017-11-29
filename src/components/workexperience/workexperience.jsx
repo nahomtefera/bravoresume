@@ -18,9 +18,12 @@ class WorkExperience extends Component {
         this.setState({
             work_experience: jobs
         })
+        
+        this.props.get_work_exp(this.state.work_experience);
+        // console.log("Yes I'm inside Work Experience");
+        // console.log(this.state.work_experience);
 
-        console.log("Yes I'm inside Work Experience");
-        console.log(this.state.work_experience);
+        // this.props.getWorkExp(this.state.work_experience);
     }
 
     render() {
