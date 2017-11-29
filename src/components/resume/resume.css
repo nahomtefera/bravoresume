@@ -2,7 +2,7 @@
     width: 21cm;
     min-height: 29.7cm;
     height: auto;
-    box-shadow: 0 0 1.425cm rgba(155,155,155,.35);    
+    box-shadow: 0 0 1.425cm rgb(227, 245, 247);
     margin: 0 auto;
 }
 
@@ -25,8 +25,4 @@
     background: cadetblue;
     color: white;
         
-}
-
-@media (max-width: 880px){
-
 }

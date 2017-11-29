@@ -1,0 +1,149 @@
+@media (max-width: 880px){
+    
+    .user-info-container, .work-experience-container, .education-container {
+        /* display: none; */
+    }
+
+    .resume-info {
+        min-height: 0cm;
+        width: 90%;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .section-bar {
+        display: none;
+    }
+
+    .download-pdf-btn-container {
+        margin-top: 65px;
+    }
+
+    .bottom-space {
+        display: block;
+    }
+
+    /* User Info */
+    .user-info-container {
+        padding-bottom: 20px;
+    }
+
+    .user-full-name {
+        margin-bottom: 10px;
+    }
+
+    .user-name , .user-last-name {
+        display: block!important;
+    }
+
+    .user-name input, .user-last-name input {
+        margin: 0;
+    }
+
+    .user-contact-details {
+        padding: 0;
+    }
+
+    .user-contact-details div {
+        display: block!important;
+        margin-bottom: 10px;
+    }
+
+    .user-contact-details div input{
+        margin: 0;
+        font-size: 1.25em;
+        background-size: 19px;
+        padding-left: 35px;        
+    }        
+
+    br {
+        display: none;
+    }
+    /* ===================== */
+
+    /* Work Experience */
+
+    .work-experience-container {
+    }
+
+    .work-experience-header {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.3em;
+    }
+
+    .rem-job-icon {
+        width: 15px;        
+    }
+
+    .jobs-container {
+        padding: 0;        
+    }
+
+    .job-container {
+        margin-bottom: 25px;
+    }
+
+    .job-container div {
+        display: block!important;
+        float: none;
+        margin: 0;
+        margin-bottom: 10px; 
+    }
+
+    .job-container div input {
+        font-size: 1.25em;
+    }
+
+    .job-description {
+        font-size: 1.25em;
+    }
+        
+    .rem-job-container {
+        float: right!important;
+    }
+
+    /* ======================= */
+    /* EDUCATION */
+
+    .education-container {
+        display: block;        
+    }
+
+    .education-header {
+        font-size: 2.3em;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .rem-school-container {
+        float: right!important;
+    }
+
+    .rem-school-icon {
+        width: 15px;
+    }
+
+    .schools-container {
+        padding: 0; 
+    }
+
+    .school-container {
+        margin-bottom: 25px;
+    }
+
+    .school-container div {
+        display: block!important;
+        float: none;
+        margin: 0;
+        margin-bottom: 10px;         
+    }
+
+    .school-container div input{
+        margin: 0;
+        font-size: 1.25em;        
+    }        
+
+
+    
+}

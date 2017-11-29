@@ -59,6 +59,7 @@ class Resume extends Component {
                 <div className="download-pdf-btn-container">
                     <button className="download-pdf-btn" onClick={this._createpdf}>Download pdf</button>
                 </div>
+                <br/><br/>
             </div>
         )
     }
