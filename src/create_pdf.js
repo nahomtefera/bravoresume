@@ -6,9 +6,11 @@ export default (items) => {
 
     const {vfs} = vfsFonts.pdfMake;
     pdfMake.vfs = vfs;
+    var user, work_exp, education;
 
-    var user = items.user_info;
-    var work_exp = items.work_experience;
+    user = items.user_info;
+    work_exp = items.work_experience;
+    education = items.education;
     
     // We create the object that will store what we want to print
     // Once created we will first pass the user info
@@ -54,7 +56,7 @@ export default (items) => {
             },
         ]
     }
-    // We will print the title for work experience
+    // We will print the title Work Experience
     // and a horizontal bar
     docDefinition.content = docDefinition.content.concat([
         {
@@ -68,7 +70,8 @@ export default (items) => {
           { canvas: [{ type: 'line', x1: 0, y1:1, x2: 460, y2:1, lineWidth: 2, color:"#3873b3" } ] },
     ])
 
-    // Now we are going to pass the Work Experience
+    // Now we are going to iterate the jobs
+    // And print them
     work_exp.map((job)=> {
         docDefinition.content = docDefinition.content.concat([
               //We have to print all the Jobs that we have
@@ -103,6 +106,52 @@ export default (items) => {
         ]);
     })
     
+    // We will print the title Education
+    // and a horizontal bar
+
+    docDefinition.content= docDefinition.content.concat([
+      {text: " "},
+      {
+        text: "Education",
+        fontSize: 14,
+        color: '#3873b3',
+      },
+      { canvas: [{ type: 'line', x1: 0, y1:1, x2: 460, y2:1, lineWidth: 2, color:"#3873b3" } ] },
+      {
+        text: "Academic Qualifications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ",
+        fontSize: 11,
+        color: '#3873b3',
+        alignment: "justify",
+        margin: [ 0, 5, 0, 2 ]
+      }
+    ])
+
+    // Now we are going to iterate through schools
+    // And print them
+    education.map((school)=>{
+      docDefinition.content = docDefinition.content.concat([
+        {
+          text: school.degree,
+          fontSize: 11,
+          bold: true,
+          color: '#333',
+          margin: [ 10, 0, 0, 0]
+        },
+        {
+          text: school.year,
+          fontSize: 11,
+          alignment: "right",
+          color: '#333',
+          margin: [ 10, -11, 0, 0]
+        },
+        {
+          text: school.school_name + "  " + school.school_location,
+          fontSize: 11,
+          color: '#333',
+          margin: [ 10, -1, 0, 2 ]
+        }
+      ])
+    })
 
     // console.log(user)
     // console.log(work_exp)
