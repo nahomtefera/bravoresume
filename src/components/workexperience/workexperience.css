@@ -5,5 +5,14 @@
 
 .work-experience-header {
     font-weight: normal;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.jobs-container {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.work-experience-container .job-container:first-child .rem-job-container {
+    display: none;
 }

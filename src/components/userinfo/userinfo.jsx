@@ -98,6 +98,7 @@ class Userinfo extends Component {
                         onChange={this.changeEmailAddress}
                     />                     
                 </div>
+                <br/><br/>
             </div>
         )
     }

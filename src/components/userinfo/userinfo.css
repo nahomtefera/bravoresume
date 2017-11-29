@@ -10,10 +10,21 @@
 
 .user-name input, .user-last-name input {
     font-size: 2.4em;
+    font-family: 'Lato', sans-serif;
+    color: cadetblue;
 }
 
 .user-last-name input {
     margin-left: 15px;
+}
+
+.user-contact-details {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.user-home-address input, .user-phone-number input, .user-email-address input {
+    color: #4b4b4b;    
 }
 
 .user-home-address  input {

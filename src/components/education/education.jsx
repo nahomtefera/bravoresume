@@ -26,6 +26,7 @@ class Education extends Component {
         return (
             <div className="education-container">
                 <h3 className="education-header">Education</h3>
+                <div className="section-bar"></div>
                 <Schools getAllSchools={this.getAllSchools}/>
             </div>
         )

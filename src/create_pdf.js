@@ -3,7 +3,12 @@ import vfsFonts from 'pdfmake/build/vfs_fonts';
 import * as icons from './images/base64/icons_b64.js';
 
 export default (items) => {
-
+  pdfMake.fonts = {
+    Lato: {
+      normal: "Lato-Regular.ttf",
+      bold: "Lato-Bold.ttf"
+    },
+  }
     const {vfs} = vfsFonts.pdfMake;
     pdfMake.vfs = vfs;
     var user, work_exp, education;
@@ -16,41 +21,42 @@ export default (items) => {
     // Once created we will first pass the user info
     var docDefinition = {
         pageMargins: [ 40, 40, 100, 60 ],
+        // First we print the user info
+        defaultStyle:{font:"Lato"},        
         content: [
-            // First we print the user info
             {
                 text: user.user_name + " " + user.user_last_name,
                 fontSize: 32,
-                color: '#3873b3',
+                color: '#5f9ea0',
                 absolutePosition: {x: 38, y: 25}
             },
             {
-              image: icons.email_icon,
-              width: 8,
+              image: icons.home_icon,
+              width: 10,
               absolutePosition: {x: 58, y: 68}
             },
             {
-              text: user.user_home_address, 
+              text: user.user_home_address || "Home Address", 
               fontSize: 10, color: '#333',
               absolutePosition: {x: 72, y: 66}
             },
             {
               image: icons.phone_icon,
-               width: 8,
+               width: 10,
                absolutePosition: {x: 58, y: 85}
             },
             {
-              text: user.user_phone_number,
+              text: user.user_phone_number || "000-000-0000",
               fontSize: 10, color: '#333',
               absolutePosition: {x: 72, y: 83}
             },
             {
               image:  icons.email_icon,
-               width: 8,
+               width: 10,
                absolutePosition: {x: 145, y: 85}
             },
             {
-              text: user.user_email_address,
+              text: user.user_email_address || "youremail@domain.com",
               fontSize: 10, color: '#333',
               absolutePosition: {x: 159, y: 83}
             },
@@ -73,31 +79,31 @@ export default (items) => {
     // Now we are going to iterate the jobs
     // And print them
     work_exp.map((job)=> {
-        docDefinition.content = docDefinition.content.concat([
+        return docDefinition.content = docDefinition.content.concat([
               //We have to print all the Jobs that we have
               //First we print the first Job
               {
-                text: job.job_title,
+                text: job.job_title || "Job Title",
                 fontSize: 11,
                 bold: true,
                 color: '#333',
                 margin: [ 10, 8, 0, 0]
               },
               {
-                text: job.job_date,
+                text: job.job_date || "2017 - Present ",
                 fontSize: 11,
                 alignment: "right",
                 color: '#333',
                 margin: [ 10, -11, 0, 0]
               },
               {
-                text: job.job_company + "  " + job.job_location,
+                text: job.job_company + "  " + job.job_location || "Company ",
                 fontSize: 11,
                 color: '#333',
                 margin: [ 10, -1, 0, 2 ]
               },
               {
-                text: job.job_description,
+                text: job.job_description || "Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience.",
                 fontSize: 11,
                 color: '#333',
                 alignment: "justify",
@@ -129,23 +135,23 @@ export default (items) => {
     // Now we are going to iterate through schools
     // And print them
     education.map((school)=>{
-      docDefinition.content = docDefinition.content.concat([
+     return docDefinition.content = docDefinition.content.concat([
         {
-          text: school.degree,
+          text: school.degree || "Degree or Certificate",
           fontSize: 11,
           bold: true,
           color: '#333',
           margin: [ 10, 0, 0, 0]
         },
         {
-          text: school.year,
+          text: school.year || "Year",
           fontSize: 11,
           alignment: "right",
           color: '#333',
           margin: [ 10, -11, 0, 0]
         },
         {
-          text: school.school_name + "  " + school.school_location,
+          text: school.school_name + "  " + school.school_location || "Institution  City, State",
           fontSize: 11,
           color: '#333',
           margin: [ 10, -1, 0, 2 ]

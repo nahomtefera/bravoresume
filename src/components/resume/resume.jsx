@@ -11,7 +11,7 @@ class Resume extends Component {
         super(props);
 
         this.state = {
-            user_info: " ",
+            user_info: {},
             work_experience: [],
             education: []
         }
@@ -34,6 +34,7 @@ class Resume extends Component {
         this.setState({
             user_info: info
         })
+        console.log(this.state)
     }   
 
     get_work_exp(job_exp) {
