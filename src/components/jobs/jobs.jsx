@@ -61,7 +61,6 @@ class Jobs extends Component {
                 })
             }
         }
-
         this.props.getAllJobs(this.state.number_jobs);
     }
 

@@ -13,11 +13,13 @@ class Resume extends Component {
         this.state = {
             user_info: " ",
             work_experience: [],
+            education: []
         }
 
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
         this.get_work_exp = this.get_work_exp.bind(this);
+        this.get_education = this.get_education.bind(this);
     }
 
     _createpdf = () => {
@@ -41,12 +43,19 @@ class Resume extends Component {
         })
     }
 
+    get_education(education) {
+        this.setState({
+            education: education
+        })
+        console.log(this.state.education)
+    }
+
     render() {
         return(
             <div className="resume-info">
                 <Userinfo getUserInfo={this.getUserInfo} />
                 <WorkExperience get_work_exp={this.get_work_exp} /> 
-                <Education /> 
+                <Education get_education={this.get_education} /> 
                 <br/><br/><br/>
                 <div className="download-pdf-btn-container">
                     <button className="download-pdf-btn" onClick={this._createpdf}>Download pdf</button>

@@ -27,21 +27,29 @@ class School extends Component {
     changeDegree(e) {
         this.setState({
             degree: e.target.value
+        },()=>{
+            this.props.getSchoolsInfo(this.state)
         });
     }
     changeYear(e) {
         this.setState({
             year: e.target.value
+        },()=>{
+            this.props.getSchoolsInfo(this.state)
         })
     }
     changeSchool(e) {
         this.setState({
             school_name: e.target.value
+        },()=>{
+            this.props.getSchoolsInfo(this.state)
         })
     }
     changeLocation(e) {
         this.setState({
-            job_location: e.target.value
+            school_location: e.target.value
+        },()=>{
+            this.props.getSchoolsInfo(this.state)
         })
     }
 

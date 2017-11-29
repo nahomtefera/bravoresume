@@ -11,10 +11,30 @@ class Schools extends Component {
         this.state={
             number_schools: [{
                 key: new Date().getTime(),
+                degree: "",
+                year: "",
+                school_name: "",
+                school_location: "",
             }],
         }
         this.addSchool = this.addSchool.bind(this);
         this.remSchool = this.remSchool.bind(this);
+        this.getSchoolsInfo = this.getSchoolsInfo.bind(this);
+    }
+
+    getSchoolsInfo(school){
+        var currentState = this.state.number_schools;
+        var allSchools = school;
+        
+        for(var i=0; i<currentState.length; i++) {
+            if (currentState[i].key === school.key) {
+                currentState[i] = allSchools;
+                this.setState({
+                    number_schools: currentState,
+                })
+            }
+        }
+        this.props.getAllSchools(this.state.number_schools)
     }
 
     addSchool() {
@@ -58,6 +78,7 @@ class Schools extends Component {
                                 key={school.key} 
                                 school_id={school.key} 
                                 remSchool={this.remSchool}
+                                getSchoolsInfo={this.getSchoolsInfo}
                             />
                         )
                     })
