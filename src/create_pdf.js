@@ -25,7 +25,7 @@ export default (items) => {
         defaultStyle:{font:"Lato"},        
         content: [
             {
-                text: user.user_name + " " + user.user_last_name,
+                text: (user.user_name || "Name") + " " + (user.user_last_name || "Last Name"),
                 fontSize: 32,
                 color: '#5f9ea0',
                 absolutePosition: {x: 38, y: 25}
@@ -97,7 +97,7 @@ export default (items) => {
                 margin: [ 10, -11, 0, 0]
               },
               {
-                text: job.job_company + "  " + job.job_location || "Company ",
+                text: (job.job_company || "Company") + "  " + (job.job_location || "City, State"),
                 fontSize: 11,
                 color: '#333',
                 margin: [ 10, -1, 0, 2 ]
@@ -108,7 +108,7 @@ export default (items) => {
                 color: '#333',
                 alignment: "justify",
                 margin: [ 10, -1, 0, 2 ]
-                }
+              }
         ]);
     })
     
@@ -123,13 +123,13 @@ export default (items) => {
         color: '#3873b3',
       },
       { canvas: [{ type: 'line', x1: 0, y1:1, x2: 460, y2:1, lineWidth: 2, color:"#3873b3" } ] },
-      {
-        text: "Academic Qualifications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ",
-        fontSize: 11,
-        color: '#3873b3',
-        alignment: "justify",
-        margin: [ 0, 5, 0, 2 ]
-      }
+      // {
+      //   text: "Academic Qualifications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ",
+      //   fontSize: 11,
+      //   color: '#3873b3',
+      //   alignment: "justify",
+      //   margin: [ 0, 5, 0, 2 ]
+      // }
     ])
 
     // Now we are going to iterate through schools
@@ -141,7 +141,7 @@ export default (items) => {
           fontSize: 11,
           bold: true,
           color: '#333',
-          margin: [ 10, 0, 0, 0]
+          margin: [ 10, 8, 0, 0]
         },
         {
           text: school.year || "Year",
@@ -151,15 +151,15 @@ export default (items) => {
           margin: [ 10, -11, 0, 0]
         },
         {
-          text: school.school_name + "  " + school.school_location || "Institution  City, State",
+          text: (school.school_name || "Institution") + "  " + (school.school_location || "City, State"),
           fontSize: 11,
           color: '#333',
-          margin: [ 10, -1, 0, 2 ]
+          margin: [ 10, 0, 0, 2 ]
         }
       ])
     })
 
     // console.log(user)
     // console.log(work_exp)
-    pdfMake.createPdf(docDefinition).download(user.user_name + user.user_last_name + ".pdf");    
+    pdfMake.createPdf(docDefinition).download((user.user_last_name||"LastName") + "_" +(user.user_name||"Name") + ".pdf");    
 }

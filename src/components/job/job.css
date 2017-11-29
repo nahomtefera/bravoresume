@@ -1,3 +1,15 @@
+.job-container {
+    margin-bottom: 10px;
+}
+
+.job-container input{
+    color: #4b4b4b;        
+}
+
+.job-title input{
+    font-weight: bold;
+}
+
 .job-date {
     float: right;
 }

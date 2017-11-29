@@ -54,8 +54,6 @@ class School extends Component {
     }
 
     removeDegree() {
-        console.log("yo what's up maan, i'm inside job")
-        console.log(this);
         this.props.remSchool(this.props.school_id);
     }
 

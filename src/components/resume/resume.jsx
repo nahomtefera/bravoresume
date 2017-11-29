@@ -34,7 +34,6 @@ class Resume extends Component {
         this.setState({
             user_info: info
         })
-        console.log(this.state)
     }   
 
     get_work_exp(job_exp) {
@@ -48,7 +47,6 @@ class Resume extends Component {
         this.setState({
             education: education
         })
-        console.log(this.state.education)
     }
 
     render() {

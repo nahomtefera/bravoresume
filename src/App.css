@@ -1,18 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-
-.resume-info {
-  width: 21cm;
-  min-height: 29.7cm;
-  height: auto;
-  border: 1px solid #ababab;
-  margin: 0 auto;
-}
-
 input, textarea {
   border: none;  
   resize: none;
-  
+  padding: 0;
 }
 
 input:focus, textarea:focus, button:focus {
@@ -21,7 +12,7 @@ input:focus, textarea:focus, button:focus {
 
 .section-bar {
   height: 1px;
-  background: black;
+  background: #5f9ea0;
   margin-top: 5px;
   margin-bottom: 10px;
 }

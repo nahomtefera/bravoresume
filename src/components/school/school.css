@@ -1,3 +1,15 @@
+.school-container {
+    margin-bottom: 10px;
+}
+
+.school-container input {
+    color: #4b4b4b;            
+}
+
+.school-title input{
+    font-weight: bold;
+}
+
 .school-date {
     float: right;
 }

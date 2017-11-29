@@ -1,3 +1,11 @@
+.resume-info {
+    width: 21cm;
+    min-height: 29.7cm;
+    height: auto;
+    box-shadow: 0 0 1.425cm rgba(155,155,155,.35);    
+    margin: 0 auto;
+}
+
 .download-pdf-btn-container {
     text-align: center
 }
@@ -17,4 +25,8 @@
     background: cadetblue;
     color: white;
         
+}
+
+@media (max-width: 880px){
+
 }
