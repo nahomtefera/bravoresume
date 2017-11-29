@@ -25,35 +25,45 @@ class Userinfo extends Component {
 
     // We will call this functions when the input changes
     // and it will update the state
+    // In order to update the state correctly
+    // we need to pass te props function as 
+    // a callback to setState
+    
     changeName(e) {
         this.setState({
             user_name: e.target.value
-        })
-        this.props.getUserInfo(this.state)
+        }, ()=>{
+            this.props.getUserInfo(this.state)            
+        });
+        
     }
     changeLastName(e) {
         this.setState({
             user_last_name: e.target.value
+        },()=>{
+            this.props.getUserInfo(this.state)                    
         })
-        this.props.getUserInfo(this.state)        
     }
     changeHomeAddress(e) {
         this.setState({
             user_home_address: e.target.value
+        },()=>{
+            this.props.getUserInfo(this.state)                    
         })
-        this.props.getUserInfo(this.state)        
     }
     changePhoneNumber(e) {
         this.setState({
             user_phone_number: e.target.value
+        },()=>{
+            this.props.getUserInfo(this.state)                    
         })
-        this.props.getUserInfo(this.state)        
     }
     changeEmailAddress(e) {
         this.setState({
             user_email_address: e.target.value
+        },()=>{
+            this.props.getUserInfo(this.state)             
         })
-        this.props.getUserInfo(this.state)        
     }
 
     render () {

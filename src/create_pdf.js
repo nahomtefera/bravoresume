@@ -54,7 +54,8 @@ export default (items) => {
             },
         ]
     }
-
+    // We will print the title for work experience
+    // and a horizontal bar
     docDefinition.content = docDefinition.content.concat([
         {
             text: " ", fontSize: 75, color: '#3873b3'
@@ -105,5 +106,5 @@ export default (items) => {
 
     // console.log(user)
     // console.log(work_exp)
-    pdfMake.createPdf(docDefinition).download();    
+    pdfMake.createPdf(docDefinition).download(user.user_name + user.user_last_name + ".pdf");    
 }

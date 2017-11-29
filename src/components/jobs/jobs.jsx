@@ -88,8 +88,6 @@ class Jobs extends Component {
                         onClick={this.addJob}
                     />
                 </div>
-
-                <button onClick={this.getJobInfo}>get job info</button>
             </div>
         )
     }

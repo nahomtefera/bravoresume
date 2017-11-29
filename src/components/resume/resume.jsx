@@ -47,8 +47,10 @@ class Resume extends Component {
                 <Userinfo getUserInfo={this.getUserInfo} />
                 <WorkExperience get_work_exp={this.get_work_exp} /> 
                 <Education /> 
-
-                <button onClick={this._createpdf}>Download</button>
+                <br/><br/><br/>
+                <div className="download-pdf-btn-container">
+                    <button className="download-pdf-btn" onClick={this._createpdf}>Download pdf</button>
+                </div>
             </div>
         )
     }

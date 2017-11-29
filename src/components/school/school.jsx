@@ -13,7 +13,7 @@ class School extends Component {
             year: "",
             school_name: "",
             school_location: "",
-            key: props.job_id,
+            key: props.school_id,
         }
 
         this.changeDegree = this.changeDegree.bind(this); 
@@ -23,10 +23,11 @@ class School extends Component {
         this.removeDegree = this.removeDegree.bind(this);
     }
 
+    
     changeDegree(e) {
         this.setState({
             degree: e.target.value
-        })
+        });
     }
     changeYear(e) {
         this.setState({
