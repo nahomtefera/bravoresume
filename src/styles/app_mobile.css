@@ -58,10 +58,11 @@
         position: absolute;
         left: 0;
         right: 0;
-        box-shadow: 0 8px 1.125cm rgb(255, 240, 207);
+        /* box-shadow: 0 3px 18px rgb(255, 240, 207); */
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         padding: 30px 0;
+        min-height: 80%;
         margin-top: 20px;        
     }
     
@@ -73,8 +74,12 @@
 
     .nav-bar-list-item {
         display: block;
+        background: white;
         text-align: left;
-        margin-bottom: 15px;
+        margin-bottom: 55px;
+        font-family: "Raleway", sans-serif;
+        font-size: 1.45em;
+        font-weight: bold;
     }
 
     .nav-bar-list-item:last-child {
