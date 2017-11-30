@@ -16,6 +16,10 @@
     margin: 0 auto;
 }
 
+.nav-bar-icon {
+    display: none;
+}
+
 .nav-bar {
     padding-top: 15px;
 }

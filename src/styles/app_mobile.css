@@ -38,9 +38,18 @@
     .header-container {
         width: 100%;
     }
-    .nav-bar{
-        display: none;     
+
+    .nav-bar-icon{
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 40px;
     }
+
+    .nav-bar-icon-item {
+        max-width: 30px;
+    }
+
     .nav-bar {
         width: 100%;
         box-sizing: border-box;
