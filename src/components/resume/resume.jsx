@@ -16,7 +16,8 @@ class Resume extends Component {
             education: [],
             showUser: true,
             showWork: false,
-            showEducation: false
+            showEducation: false,
+            showDownloadBtn: false,
         }
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
@@ -59,13 +60,15 @@ class Resume extends Component {
             this.setState({
                 showUser: false,
                 showWork: true,
-                showEducation: false
+                showEducation: false,
+                showDownloadBtn:false
             })
         }else if(this.state.showWork === true){
             this.setState({
                 showUser: false,
                 showWork: false,
-                showEducation: true
+                showEducation: true,
+                showDownloadBtn:true
             })
         }
     }
@@ -75,13 +78,15 @@ class Resume extends Component {
             this.setState({
                 showUser: true,
                 showWork: false,
-                showEducation: false
+                showEducation: false,
+                showDownloadBtn:false
             })
         }else if(this.state.showEducation === true){
             this.setState({
                 showUser: false,
                 showWork: true,
-                showEducation: false
+                showEducation: false,
+                showDownloadBtn:false
             })
         }
     }
@@ -118,7 +123,10 @@ class Resume extends Component {
                     <button onClick={this.next} className="next-btn">Next</button>
                 </div>
                 <br/><br/><br/>
-                <div className="download-pdf-btn-container">
+                <div className={this.state.showDownloadBtn ?
+                        "show download-pdf-btn-container":
+                        "hide download-pdf-btn-container"
+                        }>
                     <button className="download-pdf-btn" onClick={this._createpdf}>Download pdf</button>
                 </div>
                 <br/><br/>

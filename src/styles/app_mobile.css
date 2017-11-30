@@ -28,6 +28,7 @@
 
     .download-pdf-btn-container {
         margin-top: 65px;
+        display: none;
     }
 
     .bottom-space {

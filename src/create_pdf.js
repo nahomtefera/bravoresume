@@ -78,39 +78,75 @@ export default (items) => {
 
     // Now we are going to iterate the jobs
     // And print them
-    work_exp.map((job)=> {
-        return docDefinition.content = docDefinition.content.concat([
+    console.log(work_exp.length)
+    if(work_exp.length===0) {
+      docDefinition.content = docDefinition.content.concat([
               //We have to print all the Jobs that we have
               //First we print the first Job
               {
-                text: job.job_title || "Job Title",
+                text: "Job Title",
                 fontSize: 11,
                 bold: true,
                 color: '#333',
                 margin: [ 10, 8, 0, 0]
               },
               {
-                text: job.job_date || "2017 - Present ",
+                text: "2017 - Present ",
                 fontSize: 11,
                 alignment: "right",
                 color: '#333',
                 margin: [ 10, -11, 0, 0]
               },
               {
-                text: (job.job_company || "Company") + "  " + (job.job_location || "City, State"),
+                text: "Company City, State",
                 fontSize: 11,
                 color: '#333',
                 margin: [ 10, -1, 0, 2 ]
               },
               {
-                text: job.job_description || "Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience.",
+                text: "Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience.",
                 fontSize: 11,
                 color: '#333',
                 alignment: "justify",
                 margin: [ 10, -1, 0, 2 ]
               }
         ]);
-    })
+    }else {
+      work_exp.map((job)=> {
+        return docDefinition.content = docDefinition.content.concat([
+              //We have to print all the Jobs that we have
+              //First we print the first Job
+              {
+                text: "Job Title",
+                fontSize: 11,
+                bold: true,
+                color: '#333',
+                margin: [ 10, 8, 0, 0]
+              },
+              {
+                text: "2017 - Present ",
+                fontSize: 11,
+                alignment: "right",
+                color: '#333',
+                margin: [ 10, -11, 0, 0]
+              },
+              {
+                text: "Company  City, State",
+                fontSize: 11,
+                color: '#333',
+                margin: [ 10, -1, 0, 2 ]
+              },
+              {
+                text: "Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience.",
+                fontSize: 11,
+                color: '#333',
+                alignment: "justify",
+                margin: [ 10, -1, 0, 2 ]
+              }
+          ]);
+      })
+    }
+    
     
     // We will print the title Education
     // and a horizontal bar
@@ -134,32 +170,56 @@ export default (items) => {
 
     // Now we are going to iterate through schools
     // And print them
-    education.map((school)=>{
-     return docDefinition.content = docDefinition.content.concat([
+    if(education.length === 0 ) {
+      //
+      docDefinition.content = docDefinition.content.concat([
         {
-          text: school.degree || "Degree or Certificate",
+          text: "Degree or Certificate",
           fontSize: 11,
           bold: true,
           color: '#333',
           margin: [ 10, 8, 0, 0]
         },
         {
-          text: school.year || "Year",
+          text: "Year",
           fontSize: 11,
           alignment: "right",
           color: '#333',
           margin: [ 10, -11, 0, 0]
         },
         {
-          text: (school.school_name || "Institution") + "  " + (school.school_location || "City, State"),
+          text: "Institution City, State",
           fontSize: 11,
           color: '#333',
           margin: [ 10, 0, 0, 2 ]
         }
       ])
-    })
-
-    // console.log(user)
-    // console.log(work_exp)
+    } else {
+      education.map((school)=>{
+        return docDefinition.content = docDefinition.content.concat([
+           {
+             text: school.degree || "Degree or Certificate",
+             fontSize: 11,
+             bold: true,
+             color: '#333',
+             margin: [ 10, 8, 0, 0]
+           },
+           {
+             text: school.year || "Year",
+             fontSize: 11,
+             alignment: "right",
+             color: '#333',
+             margin: [ 10, -11, 0, 0]
+           },
+           {
+             text: (school.school_name || "Institution") + "  " + (school.school_location || "City, State"),
+             fontSize: 11,
+             color: '#333',
+             margin: [ 10, 0, 0, 2 ]
+           }
+         ])
+       })
+    }
+    
     pdfMake.createPdf(docDefinition).download((user.user_last_name||"LastName") + "_" +(user.user_name||"Name") + ".pdf");    
 }
