@@ -42,7 +42,7 @@ class Header extends Component {
                     <div className= {
                         this.state.showNav ? 
                             "slideDown nav-bar":
-                            "fadeout hide nav-bar"
+                            "hide nav-bar"
                     }>
                         <ul className="nav-bar-list">
                             <li className="nav-bar-list-item">Home</li>
