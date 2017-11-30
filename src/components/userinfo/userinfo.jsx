@@ -84,7 +84,7 @@ class Userinfo extends Component {
 
                 <div className="user-contact-details">
                     <AutosizeInput name="user-home-address" className="user-home-address"
-                        value={this.state.user_home_address} placeholder="4048 Hamilton Ave, San Jose, 95130"
+                        value={this.state.user_home_address} placeholder="Street, City, State Postal Code"
                         onChange={this.changeHomeAddress}
                     />
                     <br/>

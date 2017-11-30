@@ -17,7 +17,7 @@
     }
     .resume-info {
         min-height: 0cm;
-        width: 90%;
+        width: 95%;
         padding-top: 20px;
         padding-bottom: 30px;
     }
@@ -34,7 +34,45 @@
         display: block;
     }
 
-    /* User Info */
+    /* H E A D E R */
+    .header-container {
+        width: 100%;
+    }
+    .nav-bar{
+        display: none;     
+    }
+    .nav-bar {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        background: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        box-shadow: 0 8px 1.125cm rgb(255, 240, 207);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 30px 0;
+        margin-top: 20px;        
+    }
+    
+    .nav-bar-list {
+        width: 350px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .nav-bar-list-item {
+        display: block;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .nav-bar-list-item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* U S E R   I N F O */
     .user-info-container {
         padding-bottom: 20px;
     }
@@ -62,7 +100,7 @@
 
     .user-contact-details div input{
         margin: 0;
-        font-size: 1.25em;
+        font-size: 1.15em;
         background-size: 19px;
         padding-left: 35px;        
     }        
@@ -103,11 +141,11 @@
     }
 
     .job-container div input {
-        font-size: 1.25em;
+        font-size: 1.15em;
     }
 
     .job-description {
-        font-size: 1.25em;
+        font-size: 1.15em;
     }
         
     .rem-job-container {
@@ -151,7 +189,7 @@
 
     .school-container div input{
         margin: 0;
-        font-size: 1.25em;        
+        font-size: 1.15em;        
     }        
 
 
