@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AutosizeInput from 'react-input-autosize';
 import '../../images/icons/home-icon.png';
+import Textarea from "react-textarea-autosize";
 import './userinfo.css';
 
 class Userinfo extends Component {
@@ -14,6 +15,8 @@ class Userinfo extends Component {
             user_home_address: "",
             user_phone_number: "",
             user_email_address: "",
+            user_position: "",
+            user_profile: ""
         }
 
         this.changeName = this.changeName.bind(this);
@@ -21,6 +24,8 @@ class Userinfo extends Component {
         this.changeHomeAddress = this.changeHomeAddress.bind(this);
         this.changeEmailAddress = this.changeEmailAddress.bind(this);
         this.changePhoneNumber = this.changePhoneNumber.bind(this);
+        this.changePosition = this.changePosition.bind(this);
+        this.changeProfile = this.changeProfile.bind(this);
     }
 
     // We will call this functions when the input changes
@@ -65,6 +70,20 @@ class Userinfo extends Component {
             this.props.getUserInfo(this.state)             
         })
     }
+    changePosition(e) {
+        this.setState({
+            user_position: e.target.value
+        },()=>{
+            this.props.getUserInfo(this.state)                         
+        })
+    }
+    changeProfile(e) {
+        this.setState({
+            user_profile: e.target.value
+        },()=>{
+            this.props.getUserInfo(this.state)                         
+        })
+    }
 
     render () {
         return (
@@ -82,9 +101,18 @@ class Userinfo extends Component {
                     />
                 </div>
 
+                <div className="position-container">
+                    <AutosizeInput
+                        className="user_position"
+                        value={this.state.user_position}
+                        onChange={this.changePosition}
+                        placeholder="Position"
+                    />
+                </div>
+
                 <div className="user-contact-details">
                     <AutosizeInput name="user-home-address" className="user-home-address"
-                        value={this.state.user_home_address} placeholder="Street, City, State Postal Code"
+                        value={this.state.user_home_address} placeholder="City, State Postal Code"
                         onChange={this.changeHomeAddress}
                     />
                     <br/>
@@ -98,7 +126,17 @@ class Userinfo extends Component {
                         onChange={this.changeEmailAddress}
                     />                     
                 </div>
-                <br/><br/>
+
+                <div className="profile-container">
+                    <Textarea
+                        className="user_profile"
+                        value={this.state.user_profile}
+                        onChange={this.changeProfile}
+                        rows="2"
+                        placeholder="Write a brief description of who you are what you are doing and what you want"
+                    />
+                </div>
+
             </div>
         )
     }

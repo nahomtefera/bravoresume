@@ -23,6 +23,22 @@
     box-sizing: border-box;
 }
 
+.user_position {
+    margin-bottom: 20px;
+    font-size: 1.45em;
+}
+
+.profile-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.user_profile {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
 .user-home-address input, .user-phone-number input, .user-email-address input {
     color: #4b4b4b;    
 }
