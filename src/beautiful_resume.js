@@ -1,6 +1,7 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import vfsFonts from 'pdfmake/build/vfs_fonts';
 import * as icons from './images/base64/icons_b64.js';
+import flower1 from './images/base64/images/flowers1';
 
 export default (items) => {
     const {vfs} = vfsFonts.pdfMake;
@@ -20,6 +21,9 @@ export default (items) => {
         Roboto: {
             normal: "Roboto-Regular.ttf",
             bold: "Roboto-Medium.ttf"
+        },
+        DancingScript: {
+            normal: "DancingScript-Regular.ttf"
         }
     }
     
@@ -33,10 +37,16 @@ export default (items) => {
                 canvas: [
                     {
                         type: 'rect',
-                        x: 0, y: 0, w: 215, h: 841,                        
-                        color: '#d1ddd1'
-                    }
-                ]
+                        x: 0, y: 0, w: 595.28, h: 841.5,                        
+                        color: '#EEFFFE'
+                    },
+                    {
+                        // This is where the content is going to be
+                        type: 'rect',
+                        x: 40, y: 0, w: 515.28, h: 841,                        
+                        color: '#ffffff'
+                    },
+                ],
             };
         },
         // We will now start passing the information
@@ -46,21 +56,34 @@ export default (items) => {
                 // And we will put the name and last name inside
                 canvas: [
                     {
+                        // This is the big box on the top
                         type: 'rect',
-                        x: -40, y: -40, w: 595.28, h: 156,
-                        color: '#33342f',
+                        x: -40, y: -40, w: 595.28, h: 206,
+                        color: '#81BEBA',
                         pageBreak: 'before',
                     },
-                ]
+                    {
+                        type: 'rect',
+                        x: 0, y: 130, w: 515.28, h: 40,                        
+                        color: '#ffffff'
+                    }
+
+                ],
+
+            },
+            {
+                image: flower1,
+                width: 150,
+                margin: [0, -100, 0, 0]
             },
             // We pass the name inside
             {
                 text: (user.user_name || "Name") + " " + (user.user_last_name || "Last Name"),
-                fontSize: 45,
-                color: '#ffffff',
-                font: 'OpenSans',
+                fontSize: 50,
+                color: '#FFF',
+                font: 'DancingScript',
                 alignment: 'center',
-                margin: [ 0, -115, 0, 75],
+                margin: [ 0, -175, 0, 95],
             },
             // We create a table with two nested tables inside
             // And later on we will push the education 
@@ -70,7 +93,7 @@ export default (items) => {
                 style: 'tableExample',
                 margin: [-40, 0, 0, 0],
                 table: {
-                    widths: [190, 350],
+                    widths: [270, 270], 
                     body: [
                         [{
                             style: 'right',
@@ -94,7 +117,7 @@ export default (items) => {
                                 widths: ['*'],
                                 body: [
                                     // WORK experience will be pushed here
-                                    [{text: "W O R K   E X P E R I E N C E", bold: true, fontSize:14, margin:[40, 20, 0, 5] }]
+                                    [{text: "W O R K   E X P E R I E N C E", bold: true, fontSize:14, margin:[40, 60, 0, 5] }]
                                     
                                 ]
                             },
@@ -119,14 +142,14 @@ export default (items) => {
     // Into one of the nested tables
     var eduColumn = ()=>{
         if(education.length===0) {
-            docDefinition.content[2].table.body[0][0].table.body.push(
+            docDefinition.content[3].table.body[0][0].table.body.push(
                 [{text: 'Degree', style: 'tableHeader',bold: true,  alignment: 'right'}],
                 [{text: 'Institution'}],
                 [{text: "Year - Year ", margin:[0, 0, 0, 15]}]
             )         
         }else{
             education.map((school)=>{
-                docDefinition.content[2].table.body[0][0].table.body.push(
+                docDefinition.content[3].table.body[0][0].table.body.push(
                     [{text: school.degree || "Degree or Certificate", style: 'tableHeader',bold: true}],
                     [{text: (school.school_name || "Institution")} ],
                     [{text: school.year || "Year - Year", margin: [0, 0, 0, 15]}]
@@ -142,14 +165,14 @@ export default (items) => {
     // Into the other nested table
     var workColumn = ()=>{
         if(work_exp.length===0) {
-            docDefinition.content[2].table.body[0][1].table.body.push(
+            docDefinition.content[3].table.body[0][1].table.body.push(
                 [{text: 'Job Title - Company', style: 'tableHeader',bold: true, margin: [40, 0, 0, 0] }],
                 [{text:'Location  Year - Year', margin: [40, 0, 0, 0]}],
                 [{text:"Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience." , margin: [40, 0, 0, 15]}]            
             )         
         }else{
             work_exp.map((job)=>{
-                docDefinition.content[2].table.body[0][1].table.body.push(
+                docDefinition.content[3].table.body[0][1].table.body.push(
                     [{text: (job.job_title || "Degree or Certificate") + " - " + (job.job_company || "Institution"), style: 'tableHeader',bold: true, margin: [40, 0, 0, 0]}],
                     [{text: (job.job_location || "Location") + "  " + (job.job_date || "Year - Year"), margin: [40, 0, 0, 0] }],
                     [{text: job.job_description || "Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience.", margin: [40, 0, 0, 15]}]
