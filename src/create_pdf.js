@@ -27,7 +27,7 @@ export default (items) => {
             {
                 text: (user.user_name || "Name") + " " + (user.user_last_name || "Last Name"),
                 fontSize: 32,
-                color: '#5f9ea0',
+                color: '#3873b3',
                 absolutePosition: {x: 38, y: 25}
             },
             {

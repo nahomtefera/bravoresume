@@ -3,6 +3,8 @@ import Userinfo from '../userinfo/userinfo';
 import WorkExperience from '../workexperience/workexperience';
 import Education from '../education/education';
 import create_pdf from '../../create_pdf';
+import fancy_resume from '../../fancy_resume';
+
 import './resume.css'
 
 class Resume extends Component {
@@ -17,7 +19,7 @@ class Resume extends Component {
             showUser: true,
             showWork: false,
             showEducation: false,
-            showDownloadBtn: false,
+            showDownloadBtn: true, //change this to not show at the beginning
         }
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
@@ -30,7 +32,7 @@ class Resume extends Component {
     _createpdf = () => {
         // We are going to pass create_pdf the info from
         // different components stored in the state
-        create_pdf(this.state);
+        fancy_resume(this.state);
     }
 
     getUserInfo(info) {
