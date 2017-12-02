@@ -26,6 +26,7 @@ export default (items) => {
             normal: "DancingScript-Regular.ttf"
         }
     }
+    console.log(user)
     
     // We create the object that will store what we want to print
     // Once created we will first pass the user info
@@ -85,15 +86,50 @@ export default (items) => {
                 alignment: 'center',
                 margin: [ 0, -175, 0, 95],
             },
+            // We pass the position title
+            {
+                text: user.user_position || "Front End Developer",
+                margin: [ 0, -100, 0, 95],                
+                fontSize: 20,
+                bold:true,
+                color: '#fff',
+                font: 'OpenSans',
+                alignment: 'center',
+            },
             // We create a table with two nested tables inside
             // And later on we will push the education 
             // To one of the nested tables and the work exp
             // To the other nested table
             {
+                text: user.user_position || "P R O F I L E ",
+                margin: [0, 0, 0, 10],
+                fontSize: 14,
+                bold: true,
+                alignment: 'center'
+            },
+            {
+                columns: [
+                    {
+                        width: '*',
+                        text: " "
+                    },
+                    {
+                        width: 370,        
+                        text: user.user_profile || "Brief description of who you are" 
+                    },
+                    {
+                        width: '*',
+                        text: " "
+                    }
+                ],
+                margin: [0, 0, 0, -35],
+                alignment: "justify",                
+            },
+            {
                 style: 'tableExample',
                 margin: [-40, 0, 0, 0],
                 table: {
-                    widths: [270, 270], 
+                    widths: [250, 290], 
                     body: [
                         [{
                             style: 'right',
@@ -114,7 +150,7 @@ export default (items) => {
                         },
                         {
                             table: {
-                                widths: ['*'],
+                                widths: ['270'],
                                 body: [
                                     // WORK experience will be pushed here
                                     [{text: "W O R K   E X P E R I E N C E", bold: true, fontSize:14, margin:[40, 60, 0, 5] }]
@@ -142,14 +178,14 @@ export default (items) => {
     // Into one of the nested tables
     var eduColumn = ()=>{
         if(education.length===0) {
-            docDefinition.content[3].table.body[0][0].table.body.push(
+            docDefinition.content[6].table.body[0][0].table.body.push(
                 [{text: 'Degree', style: 'tableHeader',bold: true,  alignment: 'right'}],
                 [{text: 'Institution'}],
                 [{text: "Year - Year ", margin:[0, 0, 0, 15]}]
             )         
         }else{
             education.map((school)=>{
-                docDefinition.content[3].table.body[0][0].table.body.push(
+                docDefinition.content[6].table.body[0][0].table.body.push(
                     [{text: school.degree || "Degree or Certificate", style: 'tableHeader',bold: true}],
                     [{text: (school.school_name || "Institution")} ],
                     [{text: school.year || "Year - Year", margin: [0, 0, 0, 15]}]
@@ -165,14 +201,14 @@ export default (items) => {
     // Into the other nested table
     var workColumn = ()=>{
         if(work_exp.length===0) {
-            docDefinition.content[3].table.body[0][1].table.body.push(
+            docDefinition.content[6].table.body[0][1].table.body.push(
                 [{text: 'Job Title - Company', style: 'tableHeader',bold: true, margin: [40, 0, 0, 0] }],
                 [{text:'Location  Year - Year', margin: [40, 0, 0, 0]}],
                 [{text:"Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience." , margin: [40, 0, 0, 15]}]            
             )         
         }else{
             work_exp.map((job)=>{
-                docDefinition.content[3].table.body[0][1].table.body.push(
+                docDefinition.content[6].table.body[0][1].table.body.push(
                     [{text: (job.job_title || "Degree or Certificate") + " - " + (job.job_company || "Institution"), style: 'tableHeader',bold: true, margin: [40, 0, 0, 0]}],
                     [{text: (job.job_location || "Location") + "  " + (job.job_date || "Year - Year"), margin: [40, 0, 0, 0] }],
                     [{text: job.job_description || "Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience.", margin: [40, 0, 0, 15]}]
@@ -182,6 +218,5 @@ export default (items) => {
     }
 
     workColumn()
-    
     pdfMake.createPdf(docDefinition).download((user.user_last_name||"LastName") + "_" +(user.user_name||"Name") + ".pdf");    
 }
