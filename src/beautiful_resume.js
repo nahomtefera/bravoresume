@@ -25,9 +25,7 @@ export default (items) => {
         DancingScript: {
             normal: "DancingScript-Regular.ttf"
         }
-    }
-    console.log(user)
-    
+    }   
     // We create the object that will store what we want to print
     // Once created we will first pass the user info
     var docDefinition = {
@@ -88,7 +86,7 @@ export default (items) => {
             },
             // We pass the position title
             {
-                text: user.user_position || "Front End Developer",
+                text: user.user_position || "Position",
                 margin: [ 0, -100, 0, 95],                
                 fontSize: 20,
                 bold:true,
@@ -115,7 +113,7 @@ export default (items) => {
                     },
                     {
                         width: 370,        
-                        text: user.user_profile || "Brief description of who you are" 
+                        text: user.user_profile || "Brief description of who you are, it shouldn't be more than 2 lines and should describe you as much as possible" 
                     },
                     {
                         width: '*',
@@ -132,17 +130,17 @@ export default (items) => {
                     widths: [250, 290], 
                     body: [
                         [{
-                            style: 'right',
+                            // style: 'right',
                             table: {
                                 widths: ['*'],
                                 body: [
                                     // We will First push CONTACT info and the EDUCATION
-                                    [{text: "C O N T A C T", bold: true, fontSize:14, margin:[0, 60, 0, 5] }],
-                                    [{text: user.user_email_address || "youremail@domain.com"}],
-                                    [{text: user.user_phone_number || "000-000-0000"}],
-                                    [{text: user.user_home_address || "Home Address", margin:[0, 0, 0, 25] }],
+                                    [{text: "C O N T A C T", bold: true, fontSize:14, margin:[100, 60, 0, 5] }],
+                                    [{text: user.user_email_address || "youremail@domain.com", margin:[100, 0, 0, 0]}],
+                                    [{text: user.user_phone_number || "000-000-0000", margin:[100, 0, 0, 0] }],
+                                    [{text: user.user_home_address || "Home Address", margin:[100, 0, 0, 0] }],
                                     // EDUCATION will be pushed here
-                                    [{text: "E D U C A T I O N", bold: true, fontSize:14, margin:[0, 20, 0, 5] }]
+                                    [{text: "E D U C A T I O N", bold: true, fontSize:14, margin:[100, 20, 0, 5] }]
                                 ]
                             },
                             layout: 'noBorders'
@@ -179,16 +177,16 @@ export default (items) => {
     var eduColumn = ()=>{
         if(education.length===0) {
             docDefinition.content[6].table.body[0][0].table.body.push(
-                [{text: 'Degree', style: 'tableHeader',bold: true,  alignment: 'right'}],
-                [{text: 'Institution'}],
-                [{text: "Year - Year ", margin:[0, 0, 0, 15]}]
+                [{text: 'Degree', style: 'tableHeader',bold: true, margin:[100, 0, 0, 0]}],
+                [{text: 'Institution', margin:[100, 0, 0, 0]}],
+                [{text: "Year - Year ", margin:[100, 0, 0, 15]}]
             )         
         }else{
             education.map((school)=>{
                 docDefinition.content[6].table.body[0][0].table.body.push(
-                    [{text: school.degree || "Degree or Certificate", style: 'tableHeader',bold: true}],
-                    [{text: (school.school_name || "Institution")} ],
-                    [{text: school.year || "Year - Year", margin: [0, 0, 0, 15]}]
+                    [{text: school.degree || "Degree or Certificate", style: 'tableHeader',bold: true, margin:[100, 0, 0, 0]}],
+                    [{text: (school.school_name || "Institution"), margin:[100, 0, 0, 0]} ],
+                    [{text: school.year || "Year - Year", margin: [100, 0, 0, 15]}]
                 )
             })
         }
