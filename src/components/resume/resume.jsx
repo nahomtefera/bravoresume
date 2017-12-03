@@ -6,6 +6,8 @@ import create_pdf from '../../create_pdf';
 import fancy_resume from '../../fancy_resume';
 import beautiful_resume from '../../beautiful_resume';
 import clean_resume from '../../clean_resume';
+import structured_resume from '../../structured_resume';
+import leftbar_resume from '../../leftbar_resume';
 
 // import Profile from '../profile/profile';
 
@@ -36,7 +38,7 @@ class Resume extends Component {
     _createpdf = () => {
         // We are going to pass create_pdf the info from
         // different components stored in the state
-        clean_resume(this.state);
+        leftbar_resume(this.state);
     }
 
     getUserInfo(info) {
