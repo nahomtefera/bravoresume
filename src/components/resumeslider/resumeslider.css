@@ -1,0 +1,30 @@
+.slider-scroll-container {
+    height: 446px;
+    overflow: hidden;
+}
+
+.slider-scroll {
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.slider-container {
+    width: 2000px;
+    display: flex;
+}
+
+.pictures-container {
+    max-height: 400px;
+}
+
+.picture-container {
+    display: inline-block;
+    margin: 0 35px;
+}
+
+.picture-item {
+    height: 400px;
+    border: 2px solid #ffc7c7;
+    padding: 19px;
+    border-radius: 27px;
+}

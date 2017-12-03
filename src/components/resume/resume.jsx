@@ -8,6 +8,7 @@ import beautiful_resume from '../../beautiful_resume';
 import clean_resume from '../../clean_resume';
 import structured_resume from '../../structured_resume';
 import leftbar_resume from '../../leftbar_resume';
+import ResumeSlider from '../resumeslider/resumeslider';
 
 // import Profile from '../profile/profile';
 
@@ -122,6 +123,8 @@ class Resume extends Component {
                         "hide"}
                     get_education={this.get_education} 
                 />
+
+                <ResumeSlider />
 
                 <br/><br/><br/>
             
