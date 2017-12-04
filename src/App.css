@@ -18,3 +18,10 @@ input:focus, textarea:focus, button:focus {
   margin-bottom: 10px;
 }
 
+.show-slider {
+  display: block;
+}
+
+.hide-slider {
+  display: none;
+}

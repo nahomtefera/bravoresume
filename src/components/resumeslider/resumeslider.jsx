@@ -35,22 +35,24 @@ class ResumeSlider extends Component {
 
     render(){
         return(
-            <div className="slider-scroll-container">
-                <div className="slider-scroll">
-                    <div className="slider-container">
-                        {
-                            this.state.templates_images.map((img)=>{
-                                return(
-                                    <div className="picture-container">
-                                        <img 
-                                            className="picture-item"
-                                            src={img.src} 
-                                            alt="resume template"
-                                        />
-                                    </div>
-                                )
-                            })
-                        }
+            <div className={this.props.className + " resume-slider-container"}>
+                <div className="slider-scroll-container">
+                    <div className="slider-scroll">
+                        <div className="slider">
+                            {
+                                this.state.templates_images.map((img)=>{
+                                    return(
+                                        <div className="picture-container">
+                                            <img 
+                                                className="picture-item"
+                                                src={img.src} 
+                                                alt="resume template"
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
