@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import Userinfo from '../userinfo/userinfo';
 import WorkExperience from '../workexperience/workexperience';
 import Education from '../education/education';
-import create_pdf from '../../create_pdf';
-import fancy_resume from '../../fancy_resume';
-import beautiful_resume from '../../beautiful_resume';
-import clean_resume from '../../clean_resume';
-import structured_resume from '../../structured_resume';
-import leftbar_resume from '../../leftbar_resume';
+// import create_pdf from '../../create_pdf';
+// import fancy_resume from '../../fancy_resume';
+// import beautiful_resume from '../../beautiful_resume';
+// import clean_resume from '../../clean_resume';
+// import structured_resume from '../../structured_resume';
+// import leftbar_resume from '../../leftbar_resume';
 
 // import Profile from '../profile/profile';
 
@@ -33,12 +33,20 @@ class Resume extends Component {
         this.get_education = this.get_education.bind(this);
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
+        this.sendPdf = this.sendPdf.bind(this);
+    }
+
+
+    sendPdf(){
+        this.props.getResume(this.state)
     }
 
     _createpdf = () => {
+        // this.props.getResume(this.state);
+
         // We are going to pass create_pdf the info from
         // different components stored in the state
-        leftbar_resume(this.state);
+        // leftbar_resume(this.state);
     }
 
     getUserInfo(info) {
@@ -125,16 +133,19 @@ class Resume extends Component {
 
                 <br/><br/><br/>
             
+                {/* NEEXT AND PREVIOUS BUTTONS */}
                 <div className="prev-next-btn">
                     <button onClick={this.prev} className="prev-btn">Previous</button>
                     <button onClick={this.next} className="next-btn">Next</button>
                 </div>
                 <br/><br/><br/>
+
+                {/* DOWNLOAD RESUME BUTTON */}
                 <div className={this.state.showDownloadBtn ?
                         "show download-pdf-btn-container":
                         "hide download-pdf-btn-container"
-                        }>
-                    <button className="download-pdf-btn" onClick={this._createpdf}>Download pdf</button>
+                }>
+                    <button className="download-pdf-btn" onClick={this.sendPdf}>Download pdf</button>
                 </div>
                 <br/><br/>
             </div>
