@@ -40,7 +40,10 @@ class App extends Component {
   }
 
   createPdf(resumeType) {
-    resumeType(this.state.pdfToDownload[0])
+    resumeType(this.state.pdfToDownload[0]);
+    this.setState({
+      showSlider: false,
+    })
   }
 
   showSlider(){
@@ -49,7 +52,9 @@ class App extends Component {
         showSlider: true
       })
     } else {
-      this.setState({})
+      this.setState({
+        showSlider: false
+      })
     }
   }
 

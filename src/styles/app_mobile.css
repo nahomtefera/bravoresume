@@ -89,10 +89,6 @@
     }
 
     /* U S E R   I N F O */
-    .user-info-container {
-        padding-bottom: 20px;
-    }
-
     .user-info-container div {
         overflow: hidden;
     }

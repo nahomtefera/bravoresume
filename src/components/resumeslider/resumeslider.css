@@ -7,8 +7,17 @@
     box-shadow: 0px 7px 33px 2px #b7b7b7;
 }
 
+.slider-text {
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    color: #515151;
+    font-weight: normal;
+    margin-bottom: 48px;    
+}
+
 .slider-scroll-container {
-    height: 446px;
+    height: 535px;
     width: 100%;    
     overflow: hidden;
 }
@@ -37,4 +46,9 @@
     border: 2px solid #ffc7c7;
     padding: 19px;
     border-radius: 27px;
+    box-sizing: border-box;
+}
+
+.picture-item:hover {
+
 }

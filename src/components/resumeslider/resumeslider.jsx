@@ -50,6 +50,7 @@ class ResumeSlider extends Component {
         return(
             <div className={this.props.className + " resume-slider-container"}>
                 <div className="slider-scroll-container">
+                    <h1 className="slider-text">Choose a template</h1>
                     <div className="slider-scroll">
                         <div className="slider">
                             {
