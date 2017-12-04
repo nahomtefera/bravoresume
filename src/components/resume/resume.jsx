@@ -109,7 +109,7 @@ class Resume extends Component {
 
     render() {
         return(
-            <div className="resume-info">
+            <div className="resume-info" >
 
                 <Userinfo 
                     className={this.state.showUser ?

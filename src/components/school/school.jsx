@@ -60,11 +60,6 @@ class School extends Component {
     render() {
         return (
             <div className='school-container'>
-            {/* Job Title */}
-                <AutosizeInput name="school-title" className="school-title" 
-                        value={this.state.degree} placeholder="School Title"
-                        onChange={this.changeDegree}
-                />
             {/* Remove job icon */}
             <div className="rem-school-container">
                 <img className="rem-school-icon" src={rem_icon} 
@@ -72,6 +67,11 @@ class School extends Component {
                 alt="remove this school"
                 />
             </div>
+            {/* Job Title */}
+                <AutosizeInput name="school-title" className="school-title" 
+                        value={this.state.degree} placeholder="School Title"
+                        onChange={this.changeDegree}
+                />
             {/* Dates worked */}
                 <AutosizeInput name="school-date" className="school-date" 
                         value={this.state.year} placeholder="2017"

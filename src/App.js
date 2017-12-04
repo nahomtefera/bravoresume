@@ -27,6 +27,8 @@ class App extends Component {
     this.showSlider = this.showSlider.bind(this);
     this.createPdf = this.createPdf.bind(this);
     this.getResume = this.getResume.bind(this);
+    this.escFunction = this.escFunction.bind(this);
+    this.closeSlider = this.closeSlider.bind(this);
   }
 
   getResume(resumeInfo){
@@ -58,6 +60,25 @@ class App extends Component {
     }
   }
 
+  closeSlider(){
+    this.setState(
+      {
+        showSlider:false
+      }
+    )
+  }
+
+  escFunction(event) {
+    if(event.keyCode === 27) {
+      //Do whatever when esc is pressed
+      this.closeSlider()
+    }
+  }
+
+  componentDidMount(){
+    document.addEventListener("keydown", this.escFunction, false);
+  }
+
   render() {
     return (
       <div className="App">
@@ -66,7 +87,7 @@ class App extends Component {
         />
         <ResumeSlider 
           className={
-            this.state.showSlider ? "show-slider":
+            this.state.showSlider ? "show-slider fadein":
             "hide-slider"
           }
           createPdf={this.createPdf}

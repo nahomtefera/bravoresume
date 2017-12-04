@@ -23,8 +23,9 @@
 }
 
 .rem-job-container {
-    display: inline;
-    margin-left: 10px;
+    display: block;
+    margin-left: -18px;
+    margin-bottom: -16px;
 }
 
 .rem-job-icon {

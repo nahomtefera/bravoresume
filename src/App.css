@@ -25,3 +25,14 @@ input:focus, textarea:focus, button:focus {
 .hide-slider {
   display: none;
 }
+
+.fadein, .fadeout {
+  opacity: 0;
+  -moz-transition: opacity 0.44s ease-in-out;
+  -o-transition: opacity 0.44s ease-in-out;
+  -webkit-transition: opacity 0.44s ease-in-out;
+  transition: opacity 0.44s ease-in-out;
+}
+.fadein {
+  opacity: 1;
+}

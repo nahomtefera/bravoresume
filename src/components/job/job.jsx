@@ -77,18 +77,18 @@ class Job extends Component {
     render() {
         return (
             <div className='job-container'>
+                    {/* Remove job icon */}
+                    <div className="rem-job-container">
+            <img className="rem-job-icon" src={rem_icon} 
+            onClick={this.removeJob}
+            alt="remove this job"
+            />
+            </div>
             {/* Job Title */}
                 <AutosizeInput name="job-title" className="job-title" 
                         value={this.state.job_title} placeholder="Job Title"
                         onChange={this.changeJob}
                 />
-            {/* Remove job icon */}
-            <div className="rem-job-container">
-                <img className="rem-job-icon" src={rem_icon} 
-                onClick={this.removeJob}
-                alt="remove this job"
-                />
-            </div>
             {/* Dates worked */}
                 <AutosizeInput name="job-date" className="job-date" 
                         value={this.state.job_date} placeholder="01/17 - Present"
