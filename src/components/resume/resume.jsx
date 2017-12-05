@@ -25,7 +25,7 @@ class Resume extends Component {
             showUser: true,
             showWork: false,
             showEducation: false,
-            showDownloadBtn: true, //change this to not show at the beginning
+            showDownloadBtn: false, //change this to not show at the beginning
         }
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
@@ -38,6 +38,7 @@ class Resume extends Component {
 
 
     sendPdf(){
+        console.log(this.state)
         this.props.getResume(this.state)
     }
 
@@ -130,22 +131,19 @@ class Resume extends Component {
                         "hide"}
                     get_education={this.get_education} 
                 />
-
-                <br/><br/><br/>
             
                 {/* NEEXT AND PREVIOUS BUTTONS */}
                 <div className="prev-next-btn">
                     <button onClick={this.prev} className="prev-btn">Previous</button>
                     <button onClick={this.next} className="next-btn">Next</button>
                 </div>
-                <br/><br/><br/>
 
                 {/* DOWNLOAD RESUME BUTTON */}
                 <div className={this.state.showDownloadBtn ?
                         "show download-pdf-btn-container":
                         "hide download-pdf-btn-container"
                 }>
-                    <button className="download-pdf-btn" onClick={this.sendPdf}>Download pdf</button>
+                    <a href="#"><button className="download-pdf-btn" onClick={this.sendPdf}>Download pdf</button></a>
                 </div>
                 <br/><br/>
             </div>

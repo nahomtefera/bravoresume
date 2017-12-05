@@ -32,8 +32,9 @@ class App extends Component {
   }
 
   getResume(resumeInfo){
-    var prevState = this.state.pdfToDownload;
-    prevState.push(resumeInfo)
+    var prevState = resumeInfo;
+
+    console.log("prev state:", prevState)
     this.setState({
       pdfToDownload: prevState
     });
@@ -42,7 +43,9 @@ class App extends Component {
   }
 
   createPdf(resumeType) {
-    resumeType(this.state.pdfToDownload[0]);
+    this.closeSlider();
+    
+    resumeType(this.state.pdfToDownload);
     this.setState({
       showSlider: false,
     })
@@ -87,9 +90,10 @@ class App extends Component {
         />
         <ResumeSlider 
           className={
-            this.state.showSlider ? "show-slider fadein":
+            this.state.showSlider ? "fadein":
             "hide-slider"
           }
+          closeSlider={this.closeSlider}
           createPdf={this.createPdf}
         />
         <br className="bottom-space"/><br className="bottom-space"/><br className="bottom-space"/><br className="bottom-space"/>

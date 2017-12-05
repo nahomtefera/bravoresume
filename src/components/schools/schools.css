@@ -5,7 +5,8 @@
 }
 
 .add-school-btn-container {
-    float: right;
+    text-align: right;
+    margin-bottom: 40px;
 }
 
 .add-school-btn {

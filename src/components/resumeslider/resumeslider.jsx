@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './resumeslider.css';
+import close_icon from '../../images/icons/close-icon.png'
 import create_pdf from '../../create_pdf';
 import fancy_resume from '../../fancy_resume';
 import beautiful_resume from '../../beautiful_resume';
@@ -49,6 +50,13 @@ class ResumeSlider extends Component {
     render(){
         return(
             <div className={this.props.className + " resume-slider-container"}>
+                <div className="close-icon-container">
+                    <img src={close_icon}
+                        className="close-icon-item" 
+                        onClick={this.props.closeSlider}
+                        alt="close button"
+                    />
+                </div>
                 <div className="slider-scroll-container">
                     <h1 className="slider-text">Choose a template</h1>
                     <div className="slider-scroll">

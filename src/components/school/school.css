@@ -1,5 +1,6 @@
 .school-container {
     margin-bottom: 10px;
+    font-size: 1.2em;    
 }
 
 .school-container input {
@@ -16,6 +17,10 @@
 
 .school-location input{
     margin-left: 20px;
+}
+
+.school-container:first-child .rem-school-container {
+    display: none;
 }
 
 .rem-school-container {
