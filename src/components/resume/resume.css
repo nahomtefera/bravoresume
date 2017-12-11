@@ -1,9 +1,9 @@
 .resume-info {
+    background: white;  
     width: 21cm;
     min-height: 29.7cm;
-    border: 1px solid #a4a4a452;
     height: auto;
-    box-shadow: 0px 12px 9px rgba(142, 186, 202, 0.3);
+    box-shadow: 7px 12px 28px rgba(160, 160, 160, 0.54);
     margin: 0 auto;
     overflow: hidden;
 }
@@ -11,7 +11,6 @@
 .prev-next-btn {
     display: none;
     text-align: center;
-    margin-top: 55px;    
 }
 
 .prev-next-btn button {
@@ -22,14 +21,19 @@
     font-weight: bold;
     background: white;
     font-family: "Raleway", sans-serif;
+    margin: 0 auto;
+}
+
+.prev-next-btn a {
+    margin: 0 auto;
 }
 
 .prev-btn {
-    color: indianred;
+    color: rgb(38, 136, 205);
 }
 
 .next-btn {
-    color: lightseagreen;
+    color: rgb(35, 178, 133);
 }
 
 .download-pdf-btn-container {

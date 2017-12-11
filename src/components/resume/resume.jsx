@@ -25,7 +25,9 @@ class Resume extends Component {
             showUser: true,
             showWork: false,
             showEducation: false,
-            showDownloadBtn: false, //change this to not show at the beginning
+            showDownloadBtn: false, 
+            showPrevButton: false,
+            showNextButton: true,
         }
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
@@ -78,14 +80,18 @@ class Resume extends Component {
                 showUser: false,
                 showWork: true,
                 showEducation: false,
-                showDownloadBtn:false
+                showDownloadBtn:false,
+                showPrevButton:true,
+                showNextButton:true
             })
         }else if(this.state.showWork === true){
             this.setState({
                 showUser: false,
                 showWork: false,
                 showEducation: true,
-                showDownloadBtn:true
+                showDownloadBtn:true,
+                showNextButton:false,
+                showPrevButton:true
             })
         }
     }
@@ -96,14 +102,18 @@ class Resume extends Component {
                 showUser: true,
                 showWork: false,
                 showEducation: false,
-                showDownloadBtn:false
+                showDownloadBtn:false,
+                showNextButton:true,
+                showPrevButton: false
             })
         }else if(this.state.showEducation === true){
             this.setState({
                 showUser: false,
                 showWork: true,
                 showEducation: false,
-                showDownloadBtn:false
+                showDownloadBtn:false,
+                showNextButton:true,
+                showPrevButton: true
             })
         }
     }
@@ -134,8 +144,16 @@ class Resume extends Component {
             
                 {/* NEEXT AND PREVIOUS BUTTONS */}
                 <div className="prev-next-btn">
-                    <button onClick={this.prev} className="prev-btn">Previous</button>
-                    <button onClick={this.next} className="next-btn">Next</button>
+                    <a href="#"><button onClick={this.prev} className={
+                        this.state.showPrevButton?
+                            "prev-btn show":
+                            "hide"
+                    }>Previous</button></a>
+                    <a href="#"><button onClick={this.next} className={
+                        this.state.showNextButton?
+                            "next-btn show":
+                            "hide"
+                    }>Next</button></a>
                 </div>
 
                 {/* DOWNLOAD RESUME BUTTON */}

@@ -36,3 +36,11 @@ input:focus, textarea:focus, button:focus {
 .fadein {
   opacity: 1;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none!important;
+}

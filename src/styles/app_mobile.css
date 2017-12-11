@@ -1,5 +1,4 @@
 @media (max-width: 880px){
-    
     /* .user-info-container, .work-experience-container, .education-container {
         display: none;
     } */
@@ -12,7 +11,8 @@
     }
 
     .prev-next-btn {
-        display: block;
+        margin-top: 10px;
+        display: flex
     }
 
     .show {
@@ -25,7 +25,7 @@
     .resume-info {
         min-height: 0cm;
         width: 95%;
-        margin-top: 50px;        
+        margin-top: 10px;        
         padding-top: 20px;
         padding-bottom: 30px;
     }
@@ -108,14 +108,25 @@
         display: block!important;
         border: 2px solid #f1f1f1;
         margin-bottom: 10px;
-        border-radius: 0; 
-        padding: 6px;
+        border-radius: 10px;
+        padding: 15px;
         color: #4b4b4b;
+        box-sizing: border-box;
+    }
+
+    .user-contact-details div {
+        display: block!important;
+        border: 2px solid #f1f1f1;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        font-size: 1.4em;        
+        padding: 6px;
         box-sizing: border-box;
     }
 
     .user-name input, .user-last-name input {
         margin: 0;
+        font-size: 1.5em;        
     }
 
     .user_position, .user_profile {
@@ -134,21 +145,14 @@
         font-size: 1em; 
     }
 
-    .user-contact-details div {
-        display: block!important;
-        border: 2px solid #f1f1f1;
-        margin-bottom: 10px;
-        font-size: 1.4em;        
-        border-radius: 0; 
-        padding: 6px;
-        box-sizing: border-box;
-    }
-
     .user-contact-details div input{
         margin: 0;
         font-size: 1em;
         background-size: 17px;
-        padding-left: 35px;        
+        padding-left: 35px;     
+        padding-bottom:15px;
+        padding-top: 15px;
+        background-position: 8px 15px;
     }        
 
     br {
@@ -169,7 +173,7 @@
     }
 
     .rem-job-icon {
-        width: 15px;        
+        width: 25px;
     }
 
     .jobs-container {
@@ -190,7 +194,7 @@
         margin-bottom: 10px;
         font-size: 1.2em;
         border-radius: 0;
-        padding: 6px;
+        padding: 15px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
@@ -205,7 +209,7 @@
         margin-bottom: 10px;
         font-size: 1.4em;
         border-radius: 0;
-        padding: 6px;
+        padding: 15px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
@@ -221,12 +225,13 @@
     }
 
     .add-job-btn-container {
-        float: none!important;        
+        float: none!important;     
+        margin-right: 20px;        
         text-align: right;
     }
 
     .add-job-btn{
-        width: 45px;
+        width: 25px;
     }
 
     /* ======================= */
@@ -253,7 +258,7 @@
     }
 
     .rem-school-icon {
-        width: 15px;
+        width: 25px;
     }
 
     .schools-container {
@@ -278,7 +283,7 @@
         margin-bottom: 10px;
         font-size: 1.2em;
         border-radius: 0;
-        padding: 6px;
+        padding: 15px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;   
     }
@@ -291,10 +296,12 @@
     .add-school-btn-container {
         float: none!important;
         text-align: right;
+        margin-bottom: 0;
+        margin-right: 20px;        
     }
 
     .add-school-btn {
-        width: 45px;
+        width: 25px;
         cursor: pointer;
     }
 
