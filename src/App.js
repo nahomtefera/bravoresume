@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/header/header'
+import Header from './components/header/header';
+import Footer from './components/footer/footer'
 import Resume from './components/resume/resume';
 import ResumeSlider from './components/resumeslider/resumeslider';
 import create_pdf from './create_pdf';
@@ -86,17 +87,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Resume getResume={this.getResume}
+        <Resume getResume={this.getResume} />
+        <ResumeSlider className={ this.state.showSlider ? "fadein":"hide-slider"}
+            closeSlider={this.closeSlider}
+            createPdf={this.createPdf}
         />
-        <ResumeSlider 
-          className={
-            this.state.showSlider ? "fadein":
-            "hide-slider"
-          }
-          closeSlider={this.closeSlider}
-          createPdf={this.createPdf}
-        />
-        <br className="bottom-space"/><br className="bottom-space"/><br className="bottom-space"/><br className="bottom-space"/>
+        <Footer />
       </div>
     );
   }
