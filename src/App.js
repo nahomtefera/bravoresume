@@ -9,12 +9,22 @@ import beautiful_resume from './resumes/beautiful_resume';
 import clean_resume from './resumes/clean_resume';
 import structured_resume from './resumes/structured_resume';
 import leftbar_resume from './resumes/leftbar_resume';
-
-
-// import './styles/reset.css'
+import {Router, Route, Switch} from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory'
 import './styles/normalize.css'
 import './styles/app_mobile.css'
 import './App.css';
+
+
+
+class Contact extends Component {
+
+  render(){
+    return (
+      <div>hi</div>
+    )
+  }
+}
 
 class App extends Component {
   constructor(props){
@@ -82,12 +92,22 @@ class App extends Component {
   componentDidMount(){
     document.addEventListener("keydown", this.escFunction, false);
   }
-
+  
   render() {
     return (
       <div className="App">
-        <Header />
-        <Resume getResume={this.getResume} />
+        <Router key={Math.random()} history={ createBrowserHistory()} >
+          <div> 
+          <Header />
+          <Switch>
+          <Route exact path="/" render={()=>
+            <Resume getResume={this.getResume} />
+          }/>
+          <Route path="/contact" component={Contact}/>
+          </Switch>
+          </div>
+        </Router>
+        
         <ResumeSlider className={ this.state.showSlider ? "fadein":"hide-slider"}
             closeSlider={this.closeSlider}
             createPdf={this.createPdf}

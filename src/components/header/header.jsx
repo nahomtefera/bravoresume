@@ -3,6 +3,9 @@ import logo from '../../images/logo2.png'
 import arrow_down from '../../images/icons/arrow-down.png';
 import arrow_up from '../../images/icons/arrow-up.png';
 import './header.css';
+import { Link } from 'react-router-dom'
+import {Router, Route} from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory'
 
 class Header extends Component {
 
@@ -39,16 +42,17 @@ class Header extends Component {
                             alt="toggle nav bar"
                         />
                     </div>
+                    {/* We will now create a responsive list */}
                     <div className= {
                         this.state.showNav ? 
                             "slideDown nav-bar":
                             "hide nav-bar"
                     }>
                         <ul className="nav-bar-list">
-                            <li className="nav-bar-list-item">Home</li>
-                            <li className="nav-bar-list-item">About Us</li>
-                            <li className="nav-bar-list-item">Contact</li>
-                            <li className="nav-bar-list-item">Career Development</li>
+                            <li className="nav-bar-list-item"><Link to="/">Home</Link></li>
+                            <li className="nav-bar-list-item"><Link to="/about_us">About Us</Link></li>
+                            <li className="nav-bar-list-item"><Link to="/contact">Contact</Link></li>
+                            <li className="nav-bar-list-item"><Link to="/career_development">Career Development</Link></li>
                         </ul>
                     </div>
                 </div>
