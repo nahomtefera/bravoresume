@@ -1,5 +1,5 @@
 .resume-slider-container {
-    top: 118px;
+    top: 104px;
     position: absolute;
     max-width: 100%;
     padding: 45px 0;
@@ -15,10 +15,11 @@
     color: #414141;
     font-weight: normal;
     margin-bottom: 48px;    
+    font-size: 1.7em;
 }
 
 .slider-scroll-container {
-    height: 438px;
+    height: 430px;
     width: 100%;    
     overflow: hidden;
 }

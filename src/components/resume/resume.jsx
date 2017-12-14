@@ -144,16 +144,17 @@ class Resume extends Component {
             
                 {/* NEEXT AND PREVIOUS BUTTONS */}
                 <div className="prev-next-btn">
-                    <a href="#"><button onClick={this.prev} className={
+                    <a href="#" className={
                         this.state.showPrevButton?
-                            "prev-btn show":
+                            "show":
                             "hide"
-                    }>Previous</button></a>
-                    <a href="#"><button onClick={this.next} className={
+                    }><button onClick={this.prev} className="prev-btn ">Previous</button></a>
+
+                    <a href="#" className={
                         this.state.showNextButton?
-                            "next-btn show":
+                            "show":
                             "hide"
-                    }>Next</button></a>
+                    }><button className="next-btn" onClick={this.next} >Next</button></a>
                 </div>
 
                 {/* DOWNLOAD RESUME BUTTON */}

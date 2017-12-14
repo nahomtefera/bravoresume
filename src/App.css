@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+
+body {
+  /* background: linear-gradient(to left, #f7fff0, #fffbee); */
+}
+
 input, textarea {
   border: none;  
   resize: none;
