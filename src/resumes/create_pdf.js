@@ -1,6 +1,6 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import vfsFonts from 'pdfmake/build/vfs_fonts';
-import * as icons from './images/base64/icons_b64.js';
+import * as icons from '../images/base64/icons_b64.js';
 
 export default (items) => {
   pdfMake.fonts = {

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './resumeslider.css';
 import close_icon from '../../images/icons/close-icon.png'
-import create_pdf from '../../create_pdf';
-import fancy_resume from '../../fancy_resume';
-import beautiful_resume from '../../beautiful_resume';
-import clean_resume from '../../clean_resume';
-import structured_resume from '../../structured_resume';
-import leftbar_resume from '../../leftbar_resume';
+import create_pdf from '../../resumes/create_pdf';
+import fancy_resume from '../../resumes/fancy_resume';
+import beautiful_resume from '../../resumes/beautiful_resume';
+import clean_resume from '../../resumes/clean_resume';
+import structured_resume from '../../resumes/structured_resume';
+import leftbar_resume from '../../resumes/leftbar_resume';
 
 
 class ResumeSlider extends Component {
