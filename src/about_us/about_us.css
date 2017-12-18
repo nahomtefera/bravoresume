@@ -1,0 +1,136 @@
+.story-header{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 4em;    
+    color: rgb(26, 26, 26);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.story-text {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.4em;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.story-img {
+    height: 400px;
+    background: url("../images/about_us/FB4_3.jpg") fixed;
+}
+
+.about-us-mission {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.left-quote, .right-quote {
+    width: 30px;
+}
+
+.left-quote {
+    margin-right: 10px;
+}
+
+.right-quote {
+    margin-left: 10px;
+}
+
+.small-logo {
+    width: 30px;    
+}
+
+.method-header, .our-team-header {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 4em;    
+    color: rgb(26, 26, 26);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.method-container, .our-team-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.method-item-container, .our-team-item-container {
+    display: flex;
+    margin-bottom: 40px;    
+}
+
+.method-img-container, .our-team-img-container {
+    display: inline-block;
+}
+
+.method-text-container , .our-team-text-container{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 2em;
+}
+
+.our-team-text-container{
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 1.4em;   
+}
+
+.method-img-item{
+    width: 100px;
+}
+
+.our-team-img-item {
+    width: 150px;
+    border: 2px solid indianred;
+    border-radius: 150px;
+}
+
+.team-member-name {
+    font-weight: bold;
+}
+
+
+
+/* MOBILE VERSION */
+@media (max-width: 880px){
+
+    .method-container{
+        width: 90%;
+    }
+
+    .method-item-container {
+        display: block;
+        text-align: center
+    }
+
+    .method-text-container{ 
+        text-align: left;
+    }
+}    
+
+
+@media (max-width: 768px){
+    
+        .our-team-container{
+            width: 90%;
+        }
+    
+        .our-team-item-container {
+            display: block;
+            text-align: center
+        }
+    
+        .our-team-text-container{ 
+            display: block;
+            text-align: center;
+        }
+}    

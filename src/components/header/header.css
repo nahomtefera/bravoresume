@@ -35,21 +35,21 @@
     padding: 0 15px;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 1em;
+    /* font-size: 1em; */
     font-family: "Raleway", sans-serif;
 }
 
 .nav-bar-list a {
     text-decoration: none;
-    color: indianred;  
+    color: rgb(94, 154, 222);
 }
   
 .nav-bar-list  a:visited {
     text-decoration: none!important;
-    color: indianred;
+    color: rgb(94, 154, 222);
 }
 
 .nav-bar-list  a:hover {
     text-decoration: none!important;
-    color: rgb(153, 68, 68);
+    color: rgb(0, 120, 255);
 }

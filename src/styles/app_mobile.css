@@ -313,6 +313,12 @@
         height: 400px;        
     }        
 
+    /* ABOUT US */
+
+    .story-text {
+        width: 90%;
+    }
+
     /* A N I M A T I O N S */
 .fadein, .fadeout {
     opacity: 0;

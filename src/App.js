@@ -10,21 +10,12 @@ import clean_resume from './resumes/clean_resume';
 import structured_resume from './resumes/structured_resume';
 import leftbar_resume from './resumes/leftbar_resume';
 import {Router, Route, Switch} from 'react-router';
-import createBrowserHistory from 'history/createBrowserHistory'
-import './styles/normalize.css'
-import './styles/app_mobile.css'
+import createBrowserHistory from 'history/createBrowserHistory';
+import AboutUs from './about_us/about_us';
+import ContactUs from './contact_us/contact_us';
+import './styles/normalize.css';
+import './styles/app_mobile.css';
 import './App.css';
-
-
-
-class Contact extends Component {
-
-  render(){
-    return (
-      <div>hi</div>
-    )
-  }
-}
 
 class App extends Component {
   constructor(props){
@@ -96,18 +87,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <Router key={Math.random()} history={ createBrowserHistory()} >
           <div> 
-          <Header />
-          <Switch>
-          <Route exact path="/" render={()=>
-            <Resume getResume={this.getResume} />
-          }/>
-          <Route path="/contact" component={Contact}/>
-          </Switch>
+            {/*  H  E  A  D  E  R  */}
+            <Header /> 
+            {/* P A G E    C O N T E N T  */}
+            <Switch>
+              <Route exact path="/" render={()=>
+                <Resume getResume={this.getResume} />
+              }/>
+              <Route path="/about_us" component={AboutUs}/>
+              <Route path="/contact_us" component={ContactUs}/>
+
+            </Switch>
           </div>
         </Router>
-        
         <ResumeSlider className={ this.state.showSlider ? "fadein":"hide-slider"}
             closeSlider={this.closeSlider}
             createPdf={this.createPdf}
