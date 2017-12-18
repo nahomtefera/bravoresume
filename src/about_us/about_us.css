@@ -1,19 +1,19 @@
 .story-header{
     text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 4em;    
-    color: rgb(26, 26, 26);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;    
+    color: #1879a7;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
 
 .story-text {
-    width: 60%;
+    width: 55%;
     margin: 0 auto;
     font-size: 1.4em;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: normal;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .story-img {
@@ -26,6 +26,8 @@
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
     font-size: 1.2em;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .left-quote, .right-quote {
@@ -46,16 +48,16 @@
 
 .method-header, .our-team-header {
     text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 4em;    
-    color: rgb(26, 26, 26);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.4em;    
+    color: #1879a7;
     text-transform: uppercase;
     margin-bottom: 30px;
     font-weight: normal;
 }
 
 .method-container, .our-team-container {
-    width: 70%;
+    width: 55%;
     margin: 0 auto;
 }
 
@@ -73,13 +75,14 @@
     vertical-align: top;
     padding-top: 20px;
     padding-left: 20px;
-    font-size: 2em;
+    font-size: 1.4em;
+    font-family: "Raleway", sans-serif;    
 }
 
 .our-team-text-container{
     display: inline-block;
     vertical-align: middle;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 20px;
     font-size: 1.4em;   
 }
@@ -90,7 +93,7 @@
 
 .our-team-img-item {
     width: 150px;
-    border: 2px solid indianred;
+    border: 2px solid rgb(235, 235, 235);
     border-radius: 150px;
 }
 

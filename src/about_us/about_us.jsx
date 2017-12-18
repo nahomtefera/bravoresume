@@ -17,12 +17,12 @@ class AboutUs extends Component {
         return (
             <div>
                 <div className="story-header">
-                    the Story
+                    All we want is to get you that job.
                 </div>
 
-                <p className="story-text">
+                {/* <p className="story-text">
                 From the very beginning the main goal in our mind has been to help jobhunters get the best job available to them. We want to help you discover and understand the resources that you are going to need on your way to a promotion, getting a new job or changing your career.
-                </p>
+                </p> */}
 
                 <div className="story-img"> </div>
 
@@ -93,7 +93,7 @@ class AboutUs extends Component {
 
                     <div className="our-team-item-container">
                         <div className="our-team-img-container">
-                            <img className="our-team-img-item" src={jonathan_img} alt=""/>
+                            <img className="our-team-img-item" src={vivian_img} alt=""/>
                         </div>
 
                         <div className="our-team-text-container">
@@ -103,7 +103,7 @@ class AboutUs extends Component {
 
                     <div className="our-team-item-container">
                         <div className="our-team-img-container">
-                            <img className="our-team-img-item" src={vivian_img} alt=""/>
+                            <img className="our-team-img-item" src={jonathan_img} alt=""/>
                         </div>
 
                         <div className="our-team-text-container">

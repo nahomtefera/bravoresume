@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import AutosizeInput from 'react-input-autosize';
-import Textarea from "react-textarea-autosize";
-import rem_icon from '../../images/icons/rem-icon.png'
+import Textarea from "react-textarea-autosize";                                                                                                                                                                                                                                                                                                                       	                                                                                                                                                                                                                                                                                                                                import rem_icon from '../../images/icons/rem-icon.png'
 
 
 import './job.css';
