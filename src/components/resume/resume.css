@@ -46,9 +46,11 @@
     background: white;
     font-weight: bold;
     font-family: "Raleway", sans-serif;
-    color: cadetblue;
-    border: 2px solid cadetblue;
+    color: #65bc6f;
+    border: 2px solid #65bc6f;
     cursor: pointer;
+    letter-spacing: 3px;
+    border-radius: 5px;    
 }
 
 .download-pdf-btn a {
@@ -60,7 +62,7 @@
 }
 
 .download-pdf-btn:hover {
-    background: cadetblue;
+    background: #65bc6f;
     color: white;
         
 }

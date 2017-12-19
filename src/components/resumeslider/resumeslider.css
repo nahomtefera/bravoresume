@@ -5,7 +5,7 @@
     padding: 45px 0;
     padding-top: 5px;
     background: white;
-    box-shadow: 0px 7px 33px 2px #b7b7b7;
+    box-shadow: 0px 1px 5px 2px #8c8c8c9e;
 }
 
 .slider-text {
@@ -19,7 +19,7 @@
 }
 
 .slider-scroll-container {
-    height: 430px;
+    height: 435px;
     width: 100%;    
     overflow: hidden;
 }
@@ -32,6 +32,7 @@
 .slider {
     width: 2000px;
     display: flex;
+    padding-top: 4px;    
 }
 
 .pictures-container {
@@ -54,12 +55,12 @@
 
 .picture-item {
     height: 330px;
-    border: 2px solid rgb(215, 230, 236);
+    border: 1px solid rgb(214, 214, 214);
     padding: 19px;
     border-radius: 27px;
     box-sizing: border-box;
 }
 
 .picture-item:hover {
-
+    transform: scale(1.025);
 }

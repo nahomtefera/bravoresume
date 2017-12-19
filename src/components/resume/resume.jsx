@@ -162,7 +162,7 @@ class Resume extends Component {
                         "show download-pdf-btn-container":
                         "hide download-pdf-btn-container"
                 }>
-                    <a href="#"><button className="download-pdf-btn" onClick={this.sendPdf}>Download pdf</button></a>
+                    <a href="#"><button className="download-pdf-btn" onClick={this.sendPdf}>Download</button></a>
                 </div>
                 <br/><br/>
             </div>
