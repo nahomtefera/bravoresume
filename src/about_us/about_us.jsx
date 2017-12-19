@@ -16,21 +16,21 @@ class AboutUs extends Component {
     render(){
         return (
             <div>
-                <div className="story-header">
+                {/* <div className="story-header">
                     All we want is to get you that job.
-                </div>
+                </div> */}
 
                 {/* <p className="story-text">
                 From the very beginning the main goal in our mind has been to help jobhunters get the best job available to them. We want to help you discover and understand the resources that you are going to need on your way to a promotion, getting a new job or changing your career.
                 </p> */}
 
-                <div className="story-img"> </div>
+                {/* <div className="story-img"> </div> */}
 
                 {/* MISSION STATEMENT */}
                 <div className="about-us-mission"> 
                     <h2>  
                         <img className="left-quote" src={left_quote} alt="left quote"/>      
-                        Our mission at bravoresume <br/> is to help you land the job <br/> that you want
+                        We work very hard for you to get  that job
                         <img className="right-quote" src={right_quote} alt="right quote"/>      
                     </h2>
                     

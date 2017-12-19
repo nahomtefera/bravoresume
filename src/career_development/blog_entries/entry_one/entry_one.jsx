@@ -8,11 +8,14 @@ class EntryOne extends Component {
             <div>
 
                 <div className="blog-container">
+                    <img className="blog-main-img" src={require('../images/img_two_v2.jpg')} alt=""/>
+                    
                     <h3 className="blog-header">
                         This is the first Entry
                     </h3>
 
                     <div className="blog-content">
+
                         <h4 className="blog-content-header"> First Paragraph</h4>
 
                         <p className="blog-paragraph-text">

@@ -15,14 +15,16 @@ class CareerDevelopment extends Component {
             blog_entries: [
                 {
                     title: "First New Entry",
-                    path: "/EntryOne",
+                    path: "/career_development/EntryOne",
                     component: EntryOne,
+                    img: require('./blog_entries/images/img_one.jpg'),
                     key: 1
                 },
                 {
-                    title: "First New Entry",
-                    path: "/EntryOne",
+                    title: "Second Entry",
+                    path: "/career_development/EntryOne",
                     component: EntryOne,
+                    img: require('./blog_entries/images/img_two.jpg'),
                     key: 2
                 }
             ]
@@ -43,6 +45,7 @@ class CareerDevelopment extends Component {
 
                                                 <Link key={blog_entry.key} to={blog_entry.path}>
                                                     <div className="blog-entry" >
+                                                        <img className="blog-entry-img" src={blog_entry.img} alt="person"/>
                                                         <h4 className="blog-entry-title">{blog_entry.title}</h4>
                                                     </div>
                                                 </Link>
