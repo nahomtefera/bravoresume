@@ -1,0 +1,28 @@
+.blog-entries-container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.blog-entry {
+    width: 600px;
+    height: 150px;
+    margin: 0 auto;
+    box-shadow: 0px 1px 5px 2px #bebebe9e;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.blog-entries-container a {
+    text-decoration: none;
+}
+
+.blog-entries-container a:visited {
+    color: initial;
+}
+
+.blog-entry-title {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: "Lato", sans-serif;
+    padding-top: 15px;
+}

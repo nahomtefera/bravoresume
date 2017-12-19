@@ -3,36 +3,8 @@ import './career_development.css';
 import {Router, Route, Switch} from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Link } from 'react-router-dom';
+import EntryOne from './blog_entries/entry_one/entry_one';
 
-class Something extends Component {
-    render(){
-        return (
-            <div>
-                First Blog Entry
-            </div>
-        )
-    }
-}
-
-class BlogOne extends Component {
-    render() {
-        return (
-            <div>
-                <span>Blog 1</span>
-            </div>
-        )
-    }
-}
-
-class BlogTwo extends Component {
-    render() {
-        return (
-            <div>
-                Blog 2
-            </div>
-        )
-    }
-}
 
 class CareerDevelopment extends Component {
 
@@ -42,23 +14,17 @@ class CareerDevelopment extends Component {
         this.state = {
             blog_entries: [
                 {
-                    title: "Something",
-                    path: "/something",
-                    component: Something,
+                    title: "First New Entry",
+                    path: "/EntryOne",
+                    component: EntryOne,
                     key: 1
                 },
                 {
-                    title: "Blog 1",
-                    path: "/blogone",
-                    component: BlogOne,
-                    key: 2                    
-                },
-                {
-                    title: "Blog 2",
-                    path: "/blogtwo",
-                    component: BlogTwo,
-                    key: 3                   
-                },
+                    title: "First New Entry",
+                    path: "/EntryOne",
+                    component: EntryOne,
+                    key: 2
+                }
             ]
         }
     }
@@ -67,16 +33,20 @@ class CareerDevelopment extends Component {
         return(
             <div>              
                 <Router key={Math.random()} history={ createBrowserHistory()} >
-                    <div> 
+                    <div className="blog-entries-container"> 
                         <Switch>
                             <Route exact path="/career_development" render={
                                 ()=>{
                                     return(
                                         this.state.blog_entries.map((blog_entry)=>{
                                             return(
-                                                <div  key={blog_entry.key}>
-                                                    <Link to={blog_entry.path}>{blog_entry.title}</Link>
-                                                </div>
+
+                                                <Link key={blog_entry.key} to={blog_entry.path}>
+                                                    <div className="blog-entry" >
+                                                        <h4 className="blog-entry-title">{blog_entry.title}</h4>
+                                                    </div>
+                                                </Link>
+
                                             )
                                         })
                                     )
@@ -93,9 +63,7 @@ class CareerDevelopment extends Component {
                                 )
                             })
                             }
-                            
                         </Switch>
-
                     </div>
                 </Router>
             </div>
