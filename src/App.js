@@ -13,6 +13,7 @@ import {Router, Route, Switch} from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import AboutUs from './about_us/about_us';
 import ContactUs from './contact_us/contact_us';
+import CareerDevelopment from './career_development/career_development'
 import './styles/normalize.css';
 import './styles/app_mobile.css';
 import './App.css';
@@ -99,6 +100,7 @@ class App extends Component {
               }/>
               <Route path="/about_us" component={AboutUs}/>
               <Route path="/contact_us" component={ContactUs}/>
+              <Route path="/career_development" component={CareerDevelopment}/>
 
             </Switch>
           </div>
