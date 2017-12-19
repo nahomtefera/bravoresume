@@ -101,7 +101,6 @@ class App extends Component {
               <Route path="/about_us" component={AboutUs}/>
               <Route path="/contact_us" component={ContactUs}/>
               <Route path="/career_development" component={CareerDevelopment}/>
-
             </Switch>
           </div>
         </Router>
