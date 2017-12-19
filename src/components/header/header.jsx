@@ -49,10 +49,10 @@ class Header extends Component {
                             "hide nav-bar"
                     }>
                         <ul className="nav-bar-list">
-                            <li className="nav-bar-list-item"><Link to="/">Home</Link></li>
-                            <li className="nav-bar-list-item"><Link to="/about_us">About Us</Link></li>
-                            <li className="nav-bar-list-item"><Link to="/contact_us">Contact</Link></li>
-                            <li className="nav-bar-list-item"><Link to="/career_development">Career Development</Link></li>
+                            <li onClick={this.toggleNav} className="nav-bar-list-item"><Link to="/">Home</Link></li>
+                            <li onClick={this.toggleNav} className="nav-bar-list-item"><Link to="/about_us">About Us</Link></li>
+                            <li onClick={this.toggleNav} className="nav-bar-list-item"><Link to="/contact_us">Contact</Link></li>
+                            <li onClick={this.toggleNav} className="nav-bar-list-item"><Link to="/career_development">Career Development</Link></li>
                         </ul>
                     </div>
                 </div>

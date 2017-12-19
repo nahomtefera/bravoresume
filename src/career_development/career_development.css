@@ -1,13 +1,17 @@
 .blog-entries-container {
     width: 800px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .blog-entry {
     width: 600px;
+    max-width: 95%;    
     height: 150px;
     margin: 0 auto;
-    box-shadow: 0px 1px 5px 2px #bebebe9e;
+    -webkit-box-shadow: 0px 1px 5px 1px rgba(221, 221, 221, 0.89);
+    -moz-box-shadow: 0px 1px 5px 1px rgba(221, 221, 221, 0.89);
+    box-shadow: 0px 1px 5px 1px rgba(221, 221, 221, 0.89);    
     margin-bottom: 20px;
     border-radius: 4px;
 }
