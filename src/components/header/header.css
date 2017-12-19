@@ -41,15 +41,15 @@
 
 .nav-bar-list a {
     text-decoration: none;
-    color: rgb(77, 77, 77);
+    color: #1879a7;
 }
   
 .nav-bar-list  a:visited {
     text-decoration: none!important;
-    color: rgb(77, 77, 77);
+    color: #1879a7;
 }
 
 .nav-bar-list  a:hover {
     text-decoration: none!important;
-    color: rgb(22, 22, 22);
+    color: #176081;
 }

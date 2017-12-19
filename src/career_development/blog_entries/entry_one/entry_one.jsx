@@ -5,9 +5,9 @@ class EntryOne extends Component {
 
     render() {
         return (
-            <div>
+            <div className="blog-container">
 
-                <div className="blog-container">
+                <div>
                     <img className="blog-main-img" src={require('../images/img_two_v2.jpg')} alt=""/>
                     
                     <h3 className="blog-header">

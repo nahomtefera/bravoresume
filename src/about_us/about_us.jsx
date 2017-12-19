@@ -15,7 +15,9 @@ class AboutUs extends Component {
 
     render(){
         return (
-            <div>
+            <div className="about-us-container">
+
+                <img className="about-us-main-img" src={require('../images/about_us/main_img.jpg')} alt=""/>
                 {/* <div className="story-header">
                     All we want is to get you that job.
                 </div> */}
@@ -28,11 +30,11 @@ class AboutUs extends Component {
 
                 {/* MISSION STATEMENT */}
                 <div className="about-us-mission"> 
-                    <h2>  
+                    {/* <h2>  
                         <img className="left-quote" src={left_quote} alt="left quote"/>      
                         We work very hard for you to get  that job
                         <img className="right-quote" src={right_quote} alt="right quote"/>      
-                    </h2>
+                    </h2> */}
                     
                     <img className="small-logo" src={logo_letter} alt="bravoresume logo" />
                 </div>
