@@ -17,15 +17,28 @@ class CareerDevelopment extends Component {
                     title: "First New Entry",
                     path: "/career_development/EntryOne",
                     component: EntryOne,
-                    img: require('./blog_entries/images/img_one.jpg'),
+                    description: "On this break through article, the author shows us how to prepare for an interview and work towards greatness.",
+                    img: require('./blog_entries/images/img_one_v2.jpg'),
+                    date: "Dec / 20 / 2017",
                     key: 1
                 },
                 {
                     title: "Second Entry",
                     path: "/career_development/EntryOne",
                     component: EntryOne,
-                    img: require('./blog_entries/images/img_two.jpg'),
+                    description: "On this break through article, the author shows us how to prepare for an interview and work towards greatness.",
+                    img: require('./blog_entries/images/img_two_v2.jpg'),
+                    date: "Dec / 20 / 2017",
                     key: 2
+                },
+                {
+                    title: "Third Entry",
+                    path: "/career_development/EntryOne",
+                    component: EntryOne,
+                    description: "On this break through article, the author shows us how to prepare for an interview and work towards greatness.",
+                    img: require('./blog_entries/images/img_three.jpg'),
+                    date: "Dec / 20 / 2017",
+                    key: 3
                 }
             ]
         }
@@ -47,6 +60,8 @@ class CareerDevelopment extends Component {
                                                     <div className="blog-entry" >
                                                         <img className="blog-entry-img" src={blog_entry.img} alt="person"/>
                                                         <h4 className="blog-entry-title">{blog_entry.title}</h4>
+                                                        <p className="blog-entry-description">{blog_entry.description}</p>
+                                                        <p className="blog-entry-date">{blog_entry.date}</p>
                                                     </div>
                                                 </Link>
 

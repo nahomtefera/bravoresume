@@ -8,6 +8,7 @@
     margin: 0 auto;    
     margin-top: 30px;
     box-sizing: border-box;
+    padding-bottom: 50px;
 }
 
 .about-us-main-img {
@@ -64,6 +65,12 @@
 
 .small-logo {
     width: 30px;    
+}
+
+.separation-bar {
+    width: 45%;
+    margin: 7em auto;
+    border-bottom: 1px solid rgb(219, 219, 219);
 }
 
 .method-header, .our-team-header {

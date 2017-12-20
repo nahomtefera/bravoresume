@@ -2,6 +2,7 @@
     width: 800px;
     max-width: 92%;
     margin: 0 auto;
+    margin-top: 30px;   
 }
 
 .blog-entry {
@@ -15,6 +16,8 @@
     margin-bottom: 20px;
     border-radius: 4px;
     overflow: hidden;
+    position: relative;    
+    animation: slideLeft 0.4s
 }
 
 .blog-entry:hover {
@@ -38,8 +41,33 @@
 }
 
 .blog-entry-title {
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
     font-size: 1.2em;
     font-family: "Lato", sans-serif;
     padding-top: 15px;
+    margin: 2px auto;
+}
+
+.blog-entry-description {
+    padding: 5px 20px 10px 20px;
+    margin-top: 0;
+    text-align: justify;
+}
+
+.blog-entry-date {
+    text-align: right;
+    margin-right: 10px;
+    font-size: 0.7em;
+    /* font-weight: bold;   */
+    color: #8f8f8f
+}
+
+@keyframes slideLeft{
+    from{
+        left:-300px;opacity:0
+    } 
+    to{
+        left:0;opacity:1
+    }
 }

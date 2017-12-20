@@ -18,24 +18,9 @@ class AboutUs extends Component {
             <div className="about-us-container">
 
                 <img className="about-us-main-img" src={require('../images/about_us/main_img.jpg')} alt=""/>
-                {/* <div className="story-header">
-                    All we want is to get you that job.
-                </div> */}
-
-                {/* <p className="story-text">
-                From the very beginning the main goal in our mind has been to help jobhunters get the best job available to them. We want to help you discover and understand the resources that you are going to need on your way to a promotion, getting a new job or changing your career.
-                </p> */}
-
-                {/* <div className="story-img"> </div> */}
 
                 {/* MISSION STATEMENT */}
-                <div className="about-us-mission"> 
-                    {/* <h2>  
-                        <img className="left-quote" src={left_quote} alt="left quote"/>      
-                        We work very hard for you to get  that job
-                        <img className="right-quote" src={right_quote} alt="right quote"/>      
-                    </h2> */}
-                    
+                <div className="about-us-mission">                    
                     <img className="small-logo" src={logo_letter} alt="bravoresume logo" />
                 </div>
 
@@ -76,8 +61,9 @@ class AboutUs extends Component {
                     </div>
                 </div>
 
-
+                <div className="separation-bar"></div>
                 {/* OUR TEAM */}
+
                 <div className="our-team-method"> 
                     <h2 className="our-team-header">OUR TEAM</h2>
                 </div>
