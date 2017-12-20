@@ -4,6 +4,8 @@ import {Router, Route, Switch} from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Link } from 'react-router-dom';
 import EntryOne from './blog_entries/entry_one/entry_one';
+import EntryTwo from './blog_entries/entry_two/entry_two';
+import EntryThree from './blog_entries/entry_three/entry_three';
 
 
 class CareerDevelopment extends Component {
@@ -24,8 +26,8 @@ class CareerDevelopment extends Component {
                 },
                 {
                     title: "Second Entry",
-                    path: "/career_development/EntryOne",
-                    component: EntryOne,
+                    path: "/career_development/EntryTwo",
+                    component: EntryTwo,
                     description: "On this break through article, the author shows us how to prepare for an interview and work towards greatness.",
                     img: require('./blog_entries/images/img_two_v2.jpg'),
                     date: "Dec / 20 / 2017",
@@ -33,8 +35,8 @@ class CareerDevelopment extends Component {
                 },
                 {
                     title: "Third Entry",
-                    path: "/career_development/EntryOne",
-                    component: EntryOne,
+                    path: "/career_development/EntryThree",
+                    component: EntryThree,
                     description: "On this break through article, the author shows us how to prepare for an interview and work towards greatness.",
                     img: require('./blog_entries/images/img_three.jpg'),
                     date: "Dec / 20 / 2017",

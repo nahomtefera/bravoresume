@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import '../blog-content.css';
 
-class EntryOne extends Component {
+class EntryThree extends Component {
 
     render() {
         return (
             <div className="blog-container">
 
                 <div>
-                    <img className="blog-main-img" src={require('../images/img_one_v2.jpg')} alt=""/>
+                    <img className="blog-main-img" src={require('../images/img_three.jpg')} alt=""/>
                     
                     <h3 className="blog-header">
-                        This is the first Entry
+                        This is the Third Entry
                     </h3>
 
                     <div className="blog-content">
@@ -29,4 +29,4 @@ class EntryOne extends Component {
     }
 }
 
-export default EntryOne;
+export default EntryThree;
