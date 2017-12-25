@@ -28,6 +28,9 @@ class Resume extends Component {
             showDownloadBtn: false, 
             showPrevButton: false,
             showNextButton: true,
+            language: "English",
+            work_exp_title: "Work Experience",
+            education_title: "Education",
         }
         this.getUserInfo = this.getUserInfo.bind(this);
         this._createpdf = this._createpdf.bind(this);
@@ -133,6 +136,7 @@ class Resume extends Component {
                         "show":
                         "hide"}
                     get_work_exp={this.get_work_exp} 
+                    title={this.state.work_exp_title}
                 /> 
 
                 <Education 
@@ -140,6 +144,7 @@ class Resume extends Component {
                         "show":
                         "hide"}
                     get_education={this.get_education} 
+                    title={this.state.education_title}
                 />
             
                 {/* NEEXT AND PREVIOUS BUTTONS */}
