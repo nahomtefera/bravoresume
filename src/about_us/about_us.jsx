@@ -17,7 +17,7 @@ class AboutUs extends Component {
         return (
             <div className="about-us-container">
 
-                <img className="about-us-main-img" src={require('../images/about_us/main_img.jpg')} alt=""/>
+                <img className="about-us-main-img" src={require('../images/about_us/main_img_2.jpg')} alt=""/>
 
                 {/* MISSION STATEMENT */}
                 <div className="about-us-mission">                    

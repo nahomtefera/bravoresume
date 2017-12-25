@@ -47,7 +47,7 @@ class ContactUs extends Component {
 
     render() {
         return (
-            <div>
+            <div className="contact-us-container">
                 <h1 className="contact-us-header">Contact us</h1>
 
                 <div className="contact-us-form-container">

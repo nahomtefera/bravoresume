@@ -9,6 +9,7 @@ html {
 
 body {
   /* background: linear-gradient(to left, #f7fff0, #fffbee); */
+  overflow-x: hidden;
 }
 
 input, textarea {

@@ -1,3 +1,13 @@
+.contact-us-container {
+    width: 600px;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;    
+    -webkit-box-shadow: 0px 1px 5px 1px rgba(221, 221, 221, 0.89);
+    -moz-box-shadow: 0px 1px 5px 1px rgba(221, 221, 221, 0.89);
+    box-shadow: 0px 1px 5px 1px rgba(221, 221, 221, 0.89);        
+}
+
 .contact-us-header {
     text-align: center;
     color: #121212;
@@ -6,7 +16,14 @@
     font-family: "Raleway", sans-serif;
     font-size: 2em;
     letter-spacing: 15px;
-    margin-top: 15px;
+    margin: 0;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #4493b8, #4fa3c4);
+    /* background: #4493b8; */
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .contact-us-form-container {
@@ -24,11 +41,11 @@
 .contact-us-form-container input, .contact-us-form-container textarea {
     font-size: 1.4em;
     color: #121212;
-    font-family: sans-serif;
+    font-family: "Lato",sans-serif;
     border: 1px solid #dfdfdf;
     padding: 20px;
     width: 500px!important;
-    max-width: 95%!important;
+    max-width: 80%!important;
     margin: 0 auto;
 }
 
@@ -44,15 +61,17 @@
 .contact-us-send {
     padding: 5px 10px;
     letter-spacing: 2px;
-    border: 2px solid indianred;
+    border: 2px solid #4493b8;
     background: white;
-    color: indianred;
+    color: #4493b8;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.5em;
+    margin-bottom: 50px;
+    cursor: pointer;
 }
 
 .contact-us-send:hover {
     color: white;
-    background: indianred;
+    background: #4493b8;
 }    
