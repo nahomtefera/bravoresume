@@ -33,28 +33,20 @@ class Resume extends Component {
             education_title: "Education",
         }
         this.getUserInfo = this.getUserInfo.bind(this);
-        this._createpdf = this._createpdf.bind(this);
         this.get_work_exp = this.get_work_exp.bind(this);
         this.get_education = this.get_education.bind(this);
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
         this.sendPdf = this.sendPdf.bind(this);
+        this.changeLanguage = this.changeLanguage.bind(this);
     }
 
 
     sendPdf(){
-        console.log(this.state)
-        this.props.getResume(this.state)
+         this.props.getResume(this.state);
+        //  console.log("sendPdf from Resuem: ", this.state)
     }
-
-    _createpdf = () => {
-        // this.props.getResume(this.state);
-
-        // We are going to pass create_pdf the info from
-        // different components stored in the state
-        // leftbar_resume(this.state);
-    }
-
+    
     getUserInfo(info) {
         // This function is called when we type inside
         // ony of the inputs in userinfo component
@@ -121,6 +113,15 @@ class Resume extends Component {
         }
     }
 
+
+
+    changeLanguage() {
+        this.setState({
+            work_exp_title: "Experiencia de Trabajo",
+            education_title: "Educación"
+        })
+    }
+
     render() {
         return(
             <div className="resume-info" >
@@ -167,9 +168,12 @@ class Resume extends Component {
                         "show download-pdf-btn-container":
                         "hide download-pdf-btn-container"
                 }>
-                    <a href="#" onClick={()=>{return false}}><button className="download-pdf-btn" onClick={this.sendPdf}>Download</button></a>
+                    <a href="#"><button className="download-pdf-btn" onClick={this.sendPdf}>Download</button></a>
                 </div>
+
                 <br/><br/>
+
+                {/* <button onClick={this.changeLanguage}> Spanish </button> */}
             </div>
         )
     }

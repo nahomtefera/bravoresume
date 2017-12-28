@@ -18,6 +18,7 @@ import './styles/normalize.css';
 import './styles/app_mobile.css';
 import './App.css';
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -36,12 +37,9 @@ class App extends Component {
 
   getResume(resumeInfo){
     var prevState = resumeInfo;
-
-    console.log("prev state:", prevState)
     this.setState({
       pdfToDownload: prevState
     });
-
     this.showSlider()
   }
 
@@ -52,6 +50,8 @@ class App extends Component {
     this.setState({
       showSlider: false,
     })
+    // console.log("createPdf from appjs: ", this.state.pdfToDownload)
+    
   }
 
   showSlider(){

@@ -124,6 +124,11 @@
     border-radius: 150px;
 }
 
+.our-team-img-item:hover {
+    border: 2px solid rgb(174, 197, 255);
+    transform: scale(1.015); 
+}
+
 .team-member-name {
     font-weight: bold;
 }

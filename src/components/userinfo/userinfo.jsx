@@ -4,21 +4,23 @@ import '../../images/icons/home-icon.png';
 import Textarea from "react-textarea-autosize";
 import './userinfo.css';
 
+let fixUserInfo = {
+    user_name: "",
+    user_last_name: "",
+    user_home_address: "",
+    user_phone_number: "",
+    user_email_address: "",
+    user_position: "",
+    user_profile: ""
+};
+
+
 class Userinfo extends Component {
     
     constructor(props) {
         super(props);
 
-        this.state = {
-            user_name: "",
-            user_last_name: "",
-            user_home_address: "",
-            user_phone_number: "",
-            user_email_address: "",
-            user_position: "",
-            user_profile: ""
-        }
-
+        this.state = fixUserInfo;
         this.changeName = this.changeName.bind(this);
         this.changeLastName = this.changeLastName.bind(this);
         this.changeHomeAddress = this.changeHomeAddress.bind(this);
@@ -83,6 +85,14 @@ class Userinfo extends Component {
         },()=>{
             this.props.getUserInfo(this.state)                         
         })
+    }    
+
+    componentWillUnmount() {
+        // Remember state for the next mount
+        fixUserInfo = this.state;
+    }
+    componentWillMount(){
+        this.props.getUserInfo(this.state)                    
     }
 
     render () {
@@ -140,6 +150,7 @@ class Userinfo extends Component {
             </div>
         )
     }
+    
 }
 
 export default Userinfo;

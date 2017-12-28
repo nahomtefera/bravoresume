@@ -73,6 +73,12 @@ class Job extends Component {
         this.props.remJob(this.props.job_id);
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+            
+        // console.log(nextState)
+        return this.state !== nextState;
+    }
+
     render() {
         return (
             <div className='job-container'>
