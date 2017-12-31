@@ -3,6 +3,7 @@ import AutosizeInput from 'react-input-autosize';
 import Textarea from "react-textarea-autosize";                                                                                                                                                                                                                                                                                                                       	                                                                                                                                                                                                                                                                                                                                import rem_icon from '../../images/icons/rem-icon.png'
 import './job.css';
 
+// We create this variable to store the state of each job
 let fixedJob = [{
     job_title: "",
     job_date: "",
@@ -16,8 +17,11 @@ class Job extends Component {
     constructor(props) {
         super(props);
 
+        // This variable will loop through the array fixedJob that contains
+        // The state of every job component
+        // Then it will check if the current component's Key matches 
+        // Any element in fixedJob and if it does it will assign that element to itself
         let currentJob;
-
         for(let i=0; i<fixedJob.length; i++) {
             if(fixedJob[i].key === props.job_id){
                 currentJob = fixedJob[i];
@@ -32,6 +36,10 @@ class Job extends Component {
                 };
             }
         }
+        
+        // Once currentJob has been assigned
+        // The state of the component will get the values for it's properties
+        // From currentJob
 
         this.state = {
             job_title: currentJob.job_title,
@@ -56,8 +64,9 @@ class Job extends Component {
     // a callback to setState
     componentWillUnmount() {
         // Remember state for the next mount
-        let fixedJobLenght = fixedJob.length;
-        if(this.state.job_title === ""){
+        // 
+        if(this.state.job_title === "" && this.state.job_company === ""
+            && this.state.job_location === "" && this.state.job_description === ""){
             return
         }else{
             fixedJob.push(this.state);            
@@ -108,8 +117,6 @@ class Job extends Component {
     }
 
     removeJob() {
-        console.log("yo what's up maan, i'm inside job")
-        console.log(this);
         this.props.remJob(this.props.job_id);
     }
 
