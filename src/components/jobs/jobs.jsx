@@ -3,25 +3,40 @@ import Job from '../job/job';
 import plus_icon from '../../images/icons/plus-icon.png'
 import './jobs.css'
 
+let fixedJobs = {
+    number_jobs: [{
+        key: new Date().getTime(),
+        job_title: "",
+        job_date: "",
+        job_company: "",
+        job_location: "",
+        job_description: "",
+    }],
+}
+
+
 class Jobs extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state={
-            number_jobs: [{
-                key: new Date().getTime(),
-                job_title: "",
-                job_date: "",
-                job_company: "",
-                job_location: "",
-                job_description: "",
-            }],
-        }
+        this.state= fixedJobs;
         this.addJob = this.addJob.bind(this);
         this.remJob = this.remJob.bind(this);
         this.getJobInfo = this.getJobInfo.bind(this);
     }
+
+    componentWillUnmount() {
+        // Remember state for the next mount
+        fixedJobs = this.state;
+
+    }
+
+    componentWillMount(){
+        this.props.getAllJobs(fixedJobs);
+    }
+
+    
 
     addJob() {
         const prevNumOfJobs = this.state.number_jobs;

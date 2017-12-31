@@ -1,21 +1,44 @@
 import React, {Component} from 'react';
 import AutosizeInput from 'react-input-autosize';
 import Textarea from "react-textarea-autosize";                                                                                                                                                                                                                                                                                                                       	                                                                                                                                                                                                                                                                                                                                import rem_icon from '../../images/icons/rem-icon.png'
-
-
 import './job.css';
+
+let fixedJob = [{
+    job_title: "",
+    job_date: "",
+    job_company: "",
+    job_location: "",
+    job_description: "",
+}];
 
 class Job extends Component {
     
     constructor(props) {
         super(props);
 
+        let currentJob;
+
+        for(let i=0; i<fixedJob.length; i++) {
+            if(fixedJob[i].key === props.job_id){
+                currentJob = fixedJob[i];
+                break
+            } else {
+                currentJob = {
+                    job_title: "",
+                    job_date: "",
+                    job_company: "",
+                    job_location: "",
+                    job_description: "",
+                };
+            }
+        }
+
         this.state = {
-            job_title: "",
-            job_date: "",
-            job_company: "",
-            job_location: "",
-            job_description: "",
+            job_title: currentJob.job_title,
+            job_date: currentJob.job_date,
+            job_company: currentJob.job_company,
+            job_location: currentJob.job_location,
+            job_description: currentJob.job_description,
             key: props.job_id,
         }
 
@@ -31,6 +54,21 @@ class Job extends Component {
     // In order to update the state correctly
     // we need to pass te props function as 
     // a callback to setState
+    componentWillUnmount() {
+        // Remember state for the next mount
+        let fixedJobLenght = fixedJob.length;
+        if(this.state.job_title === ""){
+            return
+        }else{
+            fixedJob.push(this.state);            
+        }
+        this.props.getJobInfo(fixedJob)            
+        
+    }
+
+    componentWillMount(){
+        this.props.getJobInfo(fixedJob)          
+    }
     
     changeJob(e) {
         this.setState({
@@ -60,6 +98,7 @@ class Job extends Component {
             this.props.getJobInfo(this.state)            
         });
     }
+
     changeDescription(e) {
         this.setState({
             job_description: e.target.value
@@ -67,51 +106,46 @@ class Job extends Component {
             this.props.getJobInfo(this.state)            
         });
     }
+
     removeJob() {
         console.log("yo what's up maan, i'm inside job")
         console.log(this);
         this.props.remJob(this.props.job_id);
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-            
-        // console.log(nextState)
-        return this.state !== nextState;
-    }
-
     render() {
         return (
             <div className='job-container'>
-                    {/* Remove job icon */}
-                    <div className="rem-job-container">
-            <img className="rem-job-icon" src={rem_icon} 
-            onClick={this.removeJob}
-            alt="remove this job"
-            />
-            </div>
-            {/* Job Title */}
+                {/* Remove job icon */}
+                <div className="rem-job-container">
+                    <img className="rem-job-icon" src={rem_icon} 
+                    onClick={this.removeJob}
+                    alt="remove this job"
+                    />
+                </div>
+                {/* Job Title */}
                 <AutosizeInput name="job-title" className="job-title" 
                         value={this.state.job_title} placeholder="Job Title"
                         onChange={this.changeJob}
                 />
-            {/* Dates worked */}
+                {/* Dates worked */}
                 <AutosizeInput name="job-date" className="job-date" 
                         value={this.state.job_date} placeholder="01/17 - Present"
                         onChange={this.changeDate}
                 />
                 <br/>
-            {/* Company */}
+                {/* Company */}
                 <AutosizeInput name="job-company" className="job-company" 
                         value={this.state.job_company} placeholder="Microsoft"
                         onChange={this.changeCompany}
                 />
-            {/* Location */}
+                {/* Location */}
                 <AutosizeInput name="job-location" className="job-location" 
                         value={this.state.job_location} placeholder="Sunnyvale"
                         onChange={this.changeLocation}
                 />
                 <br/>
-            {/* Description */}
+                {/* Description */}
                 <Textarea name="job-description" className="job-description" rows="2"
                         value={this.state.job_description} placeholder="Describe your job responsibilities, accomplishments and technologies you have used. It's highly recommended that you use bullet points to describe your experience."
                         onChange={this.changeDescription}                        
