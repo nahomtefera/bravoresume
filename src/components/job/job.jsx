@@ -4,7 +4,7 @@ import Textarea from "react-textarea-autosize";                                 
 import './job.css';
 
 // We create this variable to store the state of each job
-let fixedJob = [{
+let jobStorage = [{
     job_title: "",
     job_date: "",
     job_company: "",
@@ -17,14 +17,14 @@ class Job extends Component {
     constructor(props) {
         super(props);
 
-        // This variable will loop through the array fixedJob that contains
+        // This variable will loop through the array jobStorage that contains
         // The state of every job component
         // Then it will check if the current component's Key matches 
-        // Any element in fixedJob and if it does it will assign that element to itself
+        // Any element in jobStorage and if it does it will assign that element to itself
         let currentJob;
-        for(let i=0; i<fixedJob.length; i++) {
-            if(fixedJob[i].key === props.job_id){
-                currentJob = fixedJob[i];
+        for(let i=0; i<jobStorage.length; i++) {
+            if(jobStorage[i].key === props.job_id){
+                currentJob = jobStorage[i];
                 break
             } else {
                 currentJob = {
@@ -69,14 +69,14 @@ class Job extends Component {
             && this.state.job_location === "" && this.state.job_description === ""){
             return
         }else{
-            fixedJob.push(this.state);            
+            jobStorage.push(this.state);            
         }
-        this.props.getJobInfo(fixedJob)            
+        this.props.getJobInfo(jobStorage)            
         
     }
 
     componentWillMount(){
-        this.props.getJobInfo(fixedJob)          
+        this.props.getJobInfo(jobStorage)          
     }
     
     changeJob(e) {

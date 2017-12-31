@@ -3,6 +3,14 @@ import AutosizeInput from 'react-input-autosize';
 import rem_icon from '../../images/icons/rem-icon.png';
 import './school.css';
 
+// We create this variable to store the state of each school info
+let schoolStorage = [{
+    degree: "",
+    year: "",
+    school_name: "",
+    school_location: "",
+}];
+
 class School extends Component {
     
     constructor(props) {
