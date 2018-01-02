@@ -3,24 +3,39 @@ import School from '../school/school';
 import plus_icon from '../../images/icons/plus-icon.png'
 import './schools.css'
 
+let allDegrees = {
+    number_schools: [{
+        key: new Date().getTime(),
+        degree: "",
+        year: "",
+        school_name: "",
+        school_location: "",
+    }],
+}
+
 class Schools extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state={
-            number_schools: [{
-                key: new Date().getTime(),
-                degree: "",
-                year: "",
-                school_name: "",
-                school_location: "",
-            }],
-        }
+        this.state= allDegrees;
+
         this.addSchool = this.addSchool.bind(this);
         this.remSchool = this.remSchool.bind(this);
         this.getSchoolsInfo = this.getSchoolsInfo.bind(this);
     }
+
+    
+    componentWillUnmount() {
+        // Remember state for the next mount
+        allDegrees = this.state;
+
+    }
+
+    componentWillMount(){
+        this.props.getAllSchools(allDegrees);
+    }
+
 
     getSchoolsInfo(school){
         var currentState = this.state.number_schools;

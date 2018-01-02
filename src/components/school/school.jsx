@@ -16,11 +16,34 @@ class School extends Component {
     constructor(props) {
         super(props);
 
+        // This variable will loop through the array schoolStorage that contains
+        // The state of every School component
+        // Then it will check if the current component's Key matches 
+        // Any element in schoolStorage and if it does it will assign that element to itself
+        let currentSchool;
+        for(let i=0; i<schoolStorage.length; i++) {
+            if(schoolStorage[i].key === props.school_id){
+                currentSchool = schoolStorage[i];
+                break
+            } else {
+                currentSchool = {
+                    degree: "",
+                    year: "",
+                    school_name: "",
+                    school_location: "",
+                };
+            }
+        }
+                
+        // Once currentSchool has been assigned
+        // The state of the component will get the values for it's properties
+        // From currentSchool
+
         this.state = {
-            degree: "",
-            year: "",
-            school_name: "",
-            school_location: "",
+            degree: currentSchool.degree,
+            year: currentSchool.year,
+            school_name: currentSchool.school_name,
+            school_location: currentSchool.school_location,
             key: props.school_id,
         }
 
@@ -31,7 +54,29 @@ class School extends Component {
         this.removeDegree = this.removeDegree.bind(this);
     }
 
+    componentWillUnmount() {
+        // Remember state for the next mount
+        // 
+        if(this.state.degree === "" && this.state.school_name === ""
+            && this.state.school_location === ""){
+            return
+        }else{
+            schoolStorage.push(this.state);            
+        }
+        this.props.getSchoolsInfo(schoolStorage)            
+        
+    }
+
+    componentWillMount(){
+        this.props.getSchoolsInfo(this.state)
+    }
     
+    // We will call this functions when the input changes
+    // and it will update the state
+    // In order to update the state correctly
+    // we need to pass te props function as 
+    // a callback to setStat
+
     changeDegree(e) {
         this.setState({
             degree: e.target.value
