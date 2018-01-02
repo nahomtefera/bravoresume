@@ -29,7 +29,6 @@ class Schools extends Component {
     componentWillUnmount() {
         // Remember state for the next mount
         allDegrees = this.state;
-
     }
 
     componentWillMount(){

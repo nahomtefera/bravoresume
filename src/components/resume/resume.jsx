@@ -13,25 +13,28 @@ import Education from '../education/education';
 
 import './resume.css'
 
+let resumeStorage = {
+    user_info: {},
+    work_experience: [],
+    education: [],
+    showUser: true,
+    showWork: false,
+    showEducation: false,
+    showDownloadBtn: false, 
+    showPrevButton: false,
+    showNextButton: true,
+    language: "English",
+    work_exp_title: "Work Experience",
+    education_title: "Education",
+};
+
 class Resume extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            user_info: {},
-            work_experience: [],
-            education: [],
-            showUser: true,
-            showWork: false,
-            showEducation: false,
-            showDownloadBtn: false, 
-            showPrevButton: false,
-            showNextButton: true,
-            language: "English",
-            work_exp_title: "Work Experience",
-            education_title: "Education",
-        }
+        this.state = resumeStorage;
+
         this.getUserInfo = this.getUserInfo.bind(this);
         this.get_work_exp = this.get_work_exp.bind(this);
         this.get_education = this.get_education.bind(this);
@@ -41,31 +44,34 @@ class Resume extends Component {
         this.changeLanguage = this.changeLanguage.bind(this);
     }
 
-
     sendPdf(){
-         this.props.getResume(this.state);
+         this.props.getResume(resumeStorage);
         //  console.log("sendPdf from Resuem: ", this.state)
     }
     
     getUserInfo(info) {
         // This function is called when we type inside
         // ony of the inputs in userinfo component
-        this.setState({
-            user_info: info
-        })
+        // this.setState({
+        //     user_info: info
+        // })
+
+        resumeStorage.user_info= info
     }   
 
     get_work_exp(job_exp) {
 
-        this.setState({
-            work_experience: job_exp
-        })
+        // this.setState({
+        //     work_experience: job_exp
+        // })
+        resumeStorage.work_experience= job_exp
     }
 
     get_education(education) {
-        this.setState({
-            education: education
-        })
+        // this.setState({
+        //     education: education
+        // })
+        resumeStorage.education= education
     }
 
     // Mobile Functionality to change field
