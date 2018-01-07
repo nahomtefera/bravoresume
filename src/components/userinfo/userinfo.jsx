@@ -90,6 +90,7 @@ class Userinfo extends Component {
     componentWillUnmount() {
         // Remember state for the next mount
         fixUserInfo = this.state;
+        this.props.getUserInfo(this.state)
     }
     componentWillMount(){
         this.props.getUserInfo(this.state)                    

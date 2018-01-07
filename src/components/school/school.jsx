@@ -64,11 +64,10 @@ class School extends Component {
             schoolStorage.push(this.state);            
         }
         this.props.getSchoolsInfo(schoolStorage)            
-        
     }
 
     componentWillMount(){
-        this.props.getSchoolsInfo(this.state)
+        this.props.getSchoolsInfo(schoolStorage)
     }
     
     // We will call this functions when the input changes
