@@ -99,7 +99,7 @@ class App extends Component {
                 <Resume getResume={this.getResume} />
               }/>
               <Route path="/about_us" component={AboutUs}/>
-              <Route path="/contact_us" component={ContactUs}/>
+              {/* <Route path="/contact_us" component={ContactUs}/> */}
               <Route path="/career_development" component={CareerDevelopment}/>
             </Switch>
           </div>
