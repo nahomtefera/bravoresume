@@ -56,7 +56,7 @@ class Resume extends Component {
         //     user_info: info
         // })
 
-        resumeStorage.user_info= info
+        resumeStorage.user_info = info
     }   
 
     get_work_exp(job_exp) {
@@ -64,14 +64,14 @@ class Resume extends Component {
         // this.setState({
         //     work_experience: job_exp
         // })
-        resumeStorage.work_experience= job_exp
+        resumeStorage.work_experience = job_exp
     }
 
     get_education(education) {
         // this.setState({
         //     education: education
         // })
-        resumeStorage.education= education
+        resumeStorage.education = education
     }
 
     // Mobile Functionality to change field
