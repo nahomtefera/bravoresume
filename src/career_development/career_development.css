@@ -21,9 +21,9 @@
 }
 
 .blog-entry:hover {
-    -webkit-box-shadow: 0px 1px 5px 1px rgba(124, 159, 255, 0.89);
-    -moz-box-shadow: 0px 1px 5px 1px rgba(124, 159, 255, 0.89); 
-    box-shadow: 0px 1px 5px 1px rgba(124, 159, 255, 0.89);
+    -webkit-box-shadow: 0px 1px 5px 1px rgba(163, 163, 163, 0.59);
+    -moz-box-shadow: 0px 1px 5px 1px rgba(163, 163, 163, 0.59); 
+    box-shadow: 0px 1px 5px 1px rgba(163, 163, 163, 0.59);
     transform: scale(1.0025)
 }
 
